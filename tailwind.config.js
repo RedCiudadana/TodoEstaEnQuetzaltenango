@@ -1,0 +1,71 @@
+/** @type {import('tailwindcss').Config} */
+export default {
+  content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
+  theme: {
+    extend: {
+      colors: {
+        primary: {
+          DEFAULT: '#E63946',
+          50: '#FCE9EB',
+          100: '#F9D3D7',
+          200: '#F3A8AF',
+          300: '#ED7C88',
+          400: '#E75D6A',
+          500: '#E63946',
+          600: '#CF1A28',
+          700: '#A11420',
+          800: '#730F17',
+          900: '#45090E',
+        },
+        secondary: {
+          DEFAULT: '#457B9D',
+          50: '#E9EFF3',
+          100: '#D3DFE7',
+          200: '#A8BECF',
+          300: '#7C9EB7',
+          400: '#5D89A7',
+          500: '#457B9D',
+          600: '#366281',
+          700: '#284964',
+          800: '#1B3147',
+          900: '#0D1823',
+        },
+        accent: {
+          DEFAULT: '#FCBF49',
+          50: '#FFFAF0',
+          100: '#FEF5E0',
+          200: '#FEEBB2',
+          300: '#FDD883',
+          400: '#FDC95B',
+          500: '#FCBF49',
+          600: '#FBB017',
+          700: '#E09803',
+          800: '#AE7602',
+          900: '#7B5302',
+        },
+        success: {
+          DEFAULT: '#2A9D8F',
+          50: '#E5F4F2',
+          100: '#CCE9E5',
+          200: '#99D3CB',
+          300: '#66BDB1',
+          400: '#3FA798',
+          500: '#2A9D8F',
+          600: '#227E72',
+          700: '#1A5E56',
+          800: '#113F39',
+          900: '#091F1D',
+        }
+      },
+      fontFamily: {
+        'heading': ['"Montserrat"', 'sans-serif'],
+        'body': ['"Poppins"', 'sans-serif'],
+      },
+      boxShadow: {
+        'card': '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)',
+        'card-hover': '0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)',
+      },
+    },
+  },
+  plugins: [],
+};
