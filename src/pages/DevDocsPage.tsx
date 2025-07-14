@@ -36,7 +36,6 @@ const DevDocsPage: React.FC = () => {
                 <div className="bg-gray-50 p-4 rounded-lg">
                   <h3 className="font-medium text-gray-800 mb-2">Backend</h3>
                   <ul className="space-y-2 text-gray-600">
-                    <li>• Supabase como backend serverless</li>
                     <li>• PostgreSQL como base de datos</li>
                     <li>• Edge Functions para lógica serverless</li>
                     <li>• Row Level Security (RLS) para seguridad</li>
@@ -137,9 +136,7 @@ const DevDocsPage: React.FC = () => {
 
               <div className="bg-gray-900 rounded-lg p-4 font-mono text-sm">
                 <pre className="text-white">
-{`VITE_SUPABASE_URL=your_supabase_url
-VITE_SUPABASE_ANON_KEY=your_supabase_anon_key
-VITE_MAPBOX_TOKEN=your_mapbox_token`}
+{`VITE_MAPBOX_TOKEN=your_mapbox_token`}
                 </pre>
               </div>
 
@@ -161,7 +158,6 @@ VITE_MAPBOX_TOKEN=your_mapbox_token`}
                 <div className="bg-gray-50 p-4 rounded-lg">
                   <h3 className="font-medium text-gray-800 mb-2">Producción</h3>
                   <ul className="space-y-2 text-gray-600">
-                    <li>• @supabase/supabase-js - Cliente de Supabase</li>
                     <li>• react-router-dom - Enrutamiento</li>
                     <li>• chart.js & react-chartjs-2 - Gráficos</li>
                     <li>• mapbox-gl - Mapas interactivos</li>
