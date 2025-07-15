@@ -95,7 +95,7 @@ const AdminDashboardPage: React.FC = () => {
         <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-6">
           <div className="flex items-center justify-between mb-4">
             <div className="bg-primary-100 rounded-full p-3">
-              <Building2 className="h-6 w-6 text-primary-500" />
+              <Building2 className="h-6 w-6 text-accent-500" />
             </div>
             <span className="text-sm font-medium text-gray-500">Total</span>
           </div>
@@ -185,7 +185,7 @@ const AdminDashboardPage: React.FC = () => {
               Registros Mensuales
             </h2>
             <div className="bg-primary-50 rounded-full p-2">
-              <BarChart className="h-5 w-5 text-primary-500" />
+              <BarChart className="h-5 w-5 text-accent-500" />
             </div>
           </div>
           <Bar
@@ -212,7 +212,7 @@ const AdminDashboardPage: React.FC = () => {
               Distribución por Categoría
             </h2>
             <div className="bg-primary-50 rounded-full p-2">
-              <PieChart className="h-5 w-5 text-primary-500" />
+              <PieChart className="h-5 w-5 text-accent-500" />
             </div>
           </div>
           <div className="h-[300px] flex items-center justify-center">
@@ -241,7 +241,7 @@ const AdminDashboardPage: React.FC = () => {
             </h2>
             <Link 
               to="/admin/registros" 
-              className="text-primary-600 hover:text-primary-700 font-medium text-sm"
+              className="bg-accent-500 hover:text-primary-700 font-medium text-sm"
             >
               Ver todos
             </Link>

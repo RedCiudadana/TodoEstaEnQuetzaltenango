@@ -37,11 +37,11 @@ export default {
           200: '#FEEBB2',
           300: '#FDD883',
           400: '#FDC95B',
-          500: '#FCBF49',
-          600: '#FBB017',
-          700: '#E09803',
+          500: '#e76624',
+          600: '#e76624',
+          700: '#ffdecf',
           800: '#AE7602',
-          900: '#7B5302',
+          900: '#007c6f',
         },
         success: {
           DEFAULT: '#2A9D8F',
@@ -58,7 +58,7 @@ export default {
         }
       },
       fontFamily: {
-        'heading': ['"Montserrat"', 'sans-serif'],
+        'heading': ['"Poppins-Black"', 900, 'sans-serif'],
         'body': ['"Poppins"', 'sans-serif'],
       },
       boxShadow: {

@@ -36,10 +36,10 @@ const CategoryList: React.FC = () => {
           to={`/negocios?categoria=${category.id}`}
           className="card card-hover bg-white p-6 flex flex-col items-center text-center group"
         >
-          <div className="w-16 h-16 flex items-center justify-center rounded-full bg-primary-50 text-primary-500 mb-4 group-hover:bg-primary-100 transition-colors">
+          <div className="w-16 h-16 flex items-center justify-center rounded-full bg-accent-700 text-accent-500 mb-4 group-hover:bg-accent-700 transition-colors">
             {getCategoryIcon(category.icon)}
           </div>
-          <h3 className="font-heading font-medium text-lg mb-1 group-hover:text-primary-600 transition-colors">
+          <h3 className="font-heading font-medium text-lg mb-1 group-hover:text-accent-600 transition-colors">
             {category.name}
           </h3>
           <p className="text-sm text-gray-500">

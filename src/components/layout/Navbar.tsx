@@ -20,11 +20,8 @@ const Navbar: React.FC = () => {
       <div className="container mx-auto px-4">
         <div className="flex justify-between items-center h-16">
           <Link to="/" className="flex items-center" onClick={() => setIsOpen(false)}>
-            <Logo className="h-10 w-auto" />
-            <span className="ml-2 text-lg font-heading font-bold text-primary-600 hidden sm:inline-block">
-              Todo Está en Quetzaltenango
-            </span>
-            <span className="ml-2 text-lg font-heading font-bold text-primary-600 sm:hidden">
+            <Logo className="h-16 w-auto" />
+            <span className="ml-2 text-lg font-heading font-bold bg-accent-500 sm:hidden">
               TEQ
             </span>
           </Link>
@@ -36,8 +33,8 @@ const Navbar: React.FC = () => {
               className={({isActive}) =>
                 `px-3 py-2 rounded-md font-medium flex items-center ${
                   isActive
-                    ? 'text-primary-600 bg-primary-50'
-                    : 'text-gray-700 hover:text-primary-600 hover:bg-gray-50'
+                    ? 'bg-accent-500 bg-primary-50'
+                    : 'text-gray-700 hover:bg-accent-500 hover:bg-gray-50'
                 }`
               }
             >
@@ -50,8 +47,8 @@ const Navbar: React.FC = () => {
               className={({isActive}) =>
                 `px-3 py-2 rounded-md font-medium flex items-center ${
                   isActive
-                    ? 'text-primary-600 bg-primary-50'
-                    : 'text-gray-700 hover:text-primary-600 hover:bg-gray-50'
+                    ? 'bg-accent-500 bg-primary-50'
+                    : 'text-gray-700 hover:bg-accent-500 hover:bg-gray-50'
                 }`
               }
             >
@@ -64,8 +61,8 @@ const Navbar: React.FC = () => {
               className={({isActive}) =>
                 `px-3 py-2 rounded-md font-medium flex items-center ${
                   isActive
-                    ? 'text-primary-600 bg-primary-50'
-                    : 'text-gray-700 hover:text-primary-600 hover:bg-gray-50'
+                    ? 'bg-accent-500 bg-primary-50'
+                    : 'text-gray-700 hover:bg-accent-500 hover:bg-gray-50'
                 }`
               }
             >
@@ -78,8 +75,8 @@ const Navbar: React.FC = () => {
               className={({isActive}) =>
                 `px-3 py-2 rounded-md font-medium flex items-center ${
                   isActive
-                    ? 'text-primary-600 bg-primary-50'
-                    : 'text-gray-700 hover:text-primary-600 hover:bg-gray-50'
+                    ? 'bg-accent-500 bg-primary-50'
+                    : 'text-gray-700 hover:bg-accent-500 hover:bg-gray-50'
                 }`
               }
             >
@@ -92,8 +89,8 @@ const Navbar: React.FC = () => {
               className={({isActive}) =>
                 `px-3 py-2 rounded-md font-medium flex items-center ${
                   isActive
-                    ? 'text-primary-600 bg-primary-50'
-                    : 'text-gray-700 hover:text-primary-600 hover:bg-gray-50'
+                    ? 'bg-accent-500 bg-primary-50'
+                    : 'text-gray-700 hover:bg-accent-500 hover:bg-gray-50'
                 }`
               }
             >
@@ -109,8 +106,8 @@ const Navbar: React.FC = () => {
                     className={({isActive}) =>
                       `px-3 py-2 rounded-md font-medium flex items-center ${
                         isActive
-                          ? 'text-primary-600 bg-primary-50'
-                          : 'text-gray-700 hover:text-primary-600 hover:bg-gray-50'
+                          ? 'bg-accent-500 bg-primary-50'
+                          : 'text-gray-700 hover:bg-accent-500 hover:bg-gray-50'
                       }`
                     }
                   >
@@ -120,7 +117,7 @@ const Navbar: React.FC = () => {
                 )}
                 <button
                   onClick={handleLogout}
-                  className="px-3 py-2 rounded-md font-medium flex items-center text-gray-700 hover:text-primary-600 hover:bg-gray-50"
+                  className="px-3 py-2 rounded-md font-medium flex items-center text-gray-700 hover:bg-accent-500 hover:bg-gray-50"
                 >
                   <LogOut className="mr-1 h-4 w-4" />
                   <span>Cerrar Sesión</span>
@@ -136,7 +133,7 @@ const Navbar: React.FC = () => {
 
           {/* Mobile menu button */}
           <button
-            className="md:hidden text-gray-700 hover:text-primary-600 focus:outline-none"
+            className="md:hidden text-gray-700 hover:bg-accent-500 focus:outline-none"
             onClick={() => setIsOpen(!isOpen)}
             aria-label={isOpen ? "Cerrar menú" : "Abrir menú"}
           >
@@ -154,8 +151,8 @@ const Navbar: React.FC = () => {
               className={({isActive}) =>
                 `block px-3 py-2 rounded-md font-medium ${
                   isActive
-                    ? 'text-primary-600 bg-primary-50'
-                    : 'text-gray-700 hover:text-primary-600 hover:bg-gray-50'
+                    ? 'bg-accent-500 bg-primary-50'
+                    : 'text-gray-700 hover:bg-accent-500 hover:bg-gray-50'
                 }`
               }
               onClick={() => setIsOpen(false)}
@@ -171,8 +168,8 @@ const Navbar: React.FC = () => {
               className={({isActive}) =>
                 `block px-3 py-2 rounded-md font-medium ${
                   isActive
-                    ? 'text-primary-600 bg-primary-50'
-                    : 'text-gray-700 hover:text-primary-600 hover:bg-gray-50'
+                    ? 'bg-accent-500 bg-primary-50'
+                    : 'text-gray-700 hover:bg-accent-500 hover:bg-gray-50'
                 }`
               }
               onClick={() => setIsOpen(false)}
@@ -188,8 +185,8 @@ const Navbar: React.FC = () => {
               className={({isActive}) =>
                 `block px-3 py-2 rounded-md font-medium ${
                   isActive
-                    ? 'text-primary-600 bg-primary-50'
-                    : 'text-gray-700 hover:text-primary-600 hover:bg-gray-50'
+                    ? 'bg-accent-500 bg-primary-50'
+                    : 'text-gray-700 hover:bg-accent-500 hover:bg-gray-50'
                 }`
               }
               onClick={() => setIsOpen(false)}
@@ -205,8 +202,8 @@ const Navbar: React.FC = () => {
               className={({isActive}) =>
                 `block px-3 py-2 rounded-md font-medium ${
                   isActive
-                    ? 'text-primary-600 bg-primary-50'
-                    : 'text-gray-700 hover:text-primary-600 hover:bg-gray-50'
+                    ? 'bg-accent-500 bg-primary-50'
+                    : 'text-gray-700 hover:bg-accent-500 hover:bg-gray-50'
                 }`
               }
               onClick={() => setIsOpen(false)}
@@ -222,8 +219,8 @@ const Navbar: React.FC = () => {
               className={({isActive}) =>
                 `block px-3 py-2 rounded-md font-medium ${
                   isActive
-                    ? 'text-primary-600 bg-primary-50'
-                    : 'text-gray-700 hover:text-primary-600 hover:bg-gray-50'
+                    ? 'bg-accent-500 bg-primary-50'
+                    : 'text-gray-700 hover:bg-accent-500 hover:bg-gray-50'
                 }`
               }
               onClick={() => setIsOpen(false)}
@@ -242,8 +239,8 @@ const Navbar: React.FC = () => {
                     className={({isActive}) =>
                       `block px-3 py-2 rounded-md font-medium ${
                         isActive
-                          ? 'text-primary-600 bg-primary-50'
-                          : 'text-gray-700 hover:text-primary-600 hover:bg-gray-50'
+                          ? 'bg-accent-500 bg-primary-50'
+                          : 'text-gray-700 hover:bg-accent-500 hover:bg-gray-50'
                       }`
                     }
                     onClick={() => setIsOpen(false)}
@@ -256,7 +253,7 @@ const Navbar: React.FC = () => {
                 )}
                 <button
                   onClick={handleLogout}
-                  className="w-full px-3 py-2 rounded-md font-medium flex items-center text-gray-700 hover:text-primary-600 hover:bg-gray-50"
+                  className="w-full px-3 py-2 rounded-md font-medium flex items-center text-gray-700 hover:bg-accent-500 hover:bg-gray-50"
                 >
                   <LogOut className="mr-2 h-5 w-5" />
                   <span>Cerrar Sesión</span>
@@ -265,7 +262,7 @@ const Navbar: React.FC = () => {
             ) : (
               <Link
                 to="/business/register"
-                className="block px-3 py-2 bg-primary-500 text-white rounded-md font-medium hover:bg-primary-600"
+                className="block px-3 py-2 bg-accent-500 text-white rounded-md font-medium hover:bg-accent-500"
                 onClick={() => setIsOpen(false)}
               >
                 <div className="flex items-center">

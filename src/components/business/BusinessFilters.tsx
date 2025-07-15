@@ -38,7 +38,7 @@ const BusinessFilters: React.FC<BusinessFiltersProps> = ({ filters, setFilters }
         <h3 className="font-heading font-semibold text-gray-800">Filtros</h3>
         <button 
           onClick={toggleFilters}
-          className="md:hidden text-gray-500 hover:text-primary-500"
+          className="md:hidden text-gray-500 hover:text-accent-500"
           aria-label={isOpen ? "Ocultar filtros" : "Mostrar filtros"}
         >
           <Filter size={20} />

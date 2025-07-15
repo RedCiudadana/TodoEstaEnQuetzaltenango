@@ -29,7 +29,7 @@ const FeaturedBusinesses: React.FC<FeaturedBusinessesProps> = ({ businesses }) =
             </h3>
             
             <div className="flex items-start mb-3">
-              <MapPin className="h-4 w-4 text-primary-500 mt-1 mr-2 flex-shrink-0" />
+              <MapPin className="h-4 w-4 text-accent-500 mt-1 mr-2 flex-shrink-0" />
               <div>
                 <p className="text-gray-600 text-sm">{business.address}</p>
                 <p className="text-gray-500 text-sm">{business.municipality}</p>
@@ -37,7 +37,7 @@ const FeaturedBusinesses: React.FC<FeaturedBusinessesProps> = ({ businesses }) =
             </div>
             
             <div className="flex items-start mb-4">
-              <Clock className="h-4 w-4 text-primary-500 mt-1 mr-2 flex-shrink-0" />
+              <Clock className="h-4 w-4 text-accent-500 mt-1 mr-2 flex-shrink-0" />
               <div className="text-sm text-gray-600">
                 {business.operatingHours.monday ? `Lun-Vie: ${business.operatingHours.monday}` : 'Cerrado los lunes'}
                 <br />

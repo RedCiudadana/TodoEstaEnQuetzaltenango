@@ -10,6 +10,9 @@ import RegisterCTA from '../components/home/RegisterCTA';
 import MunicipalitiesSection from '../components/home/MunicipalitiesSection';
 import { useBusinesses } from '../hooks/useBusinesses';
 import { events } from '../data/mockData';
+import Logo1 from '../assets/images/logos/TEQ-06.png';
+import Logo2 from '../assets/images/logos/TEQ-07.png';
+import Logo3 from '../assets/images/logos/TEQ-08.png';
 
 const HomePage: React.FC = () => {
   const { businesses, loading, error } = useBusinesses();
@@ -44,11 +47,11 @@ const HomePage: React.FC = () => {
                 <Calendar className="h-4 w-4" />
                 <span>Ver Eventos</span>
               </Link>
-              <Link to="/diagnostico-digital" className="btn btn-secondary">
+              <Link to="/diagnostico-digital" className="btn btn-accent">
                 <Smartphone className="h-4 w-4" />
                 <span>Diagnóstico Digital</span>
               </Link>
-              <Link to="/business/register" className="btn btn-primary">
+              <Link to="/business/register" className="btn btn-accent">
                 <ShoppingBag className="h-4 w-4" />
                 <span>Registra tu Negocio</span>
               </Link>
@@ -84,7 +87,7 @@ const HomePage: React.FC = () => {
       </section>
 
       {/* Digital Diagnostic CTA */}
-      <section className="py-12 bg-gradient-to-br from-secondary-500 to-secondary-700 relative overflow-hidden">
+      {/* <section className="py-12 bg-gradient-to-br from-secondary-500 to-secondary-700 relative overflow-hidden">
         <div 
           className="absolute inset-0 opacity-10"
           style={{
@@ -124,7 +127,7 @@ const HomePage: React.FC = () => {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Municipalities Section */}
       <MunicipalitiesSection />
@@ -230,7 +233,7 @@ const HomePage: React.FC = () => {
               className="hover:opacity-80 transition-opacity"
             >
               <img 
-                src="https://www.metropolidelosaltos.org/wp-content/uploads/2020/05/cropped-logo.png" 
+                src={Logo3} 
                 alt="Mancomunidad de los Altos" 
                 className="h-20 w-auto object-contain"
               />
@@ -242,19 +245,19 @@ const HomePage: React.FC = () => {
               className="hover:opacity-80 transition-opacity"
             >
               <img 
-                src="https://www.redciudadana.org/assets/img/red/LOGO-RED_NEGRO.png" 
+                src={Logo1}
                 alt="Red Ciudadana" 
                 className="h-20 w-auto object-contain"
               />
             </a>
             <a 
-              href="https://conectafuturo.redciudadana.org" 
+              href="https://escuela.redciudadana.org" 
               target="_blank" 
               rel="noopener noreferrer"
               className="hover:opacity-80 transition-opacity"
             >
               <img 
-                src="https://conectafuturo.redciudadana.org/assets/img/logo-conecta-futuro.png" 
+                src={Logo2}
                 alt="Conecta Futuro" 
                 className="h-20 w-auto object-contain"
               />

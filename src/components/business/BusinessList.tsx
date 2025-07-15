@@ -40,7 +40,7 @@ const BusinessList: React.FC<BusinessListProps> = ({ businesses }) => {
             </h3>
             
             <div className="flex items-start mb-2">
-              <MapPin className="h-4 w-4 text-primary-500 mt-1 mr-2 flex-shrink-0" />
+              <MapPin className="h-4 w-4 text-accent-500 mt-1 mr-2 flex-shrink-0" />
               <div>
                 <p className="text-gray-600 text-sm">{business.address}</p>
                 <p className="text-gray-500 text-sm">{business.municipality}</p>
@@ -48,7 +48,7 @@ const BusinessList: React.FC<BusinessListProps> = ({ businesses }) => {
             </div>
             
             <div className="flex items-start mb-3">
-              <Clock className="h-4 w-4 text-primary-500 mt-1 mr-2 flex-shrink-0" />
+              <Clock className="h-4 w-4 text-accent-500 mt-1 mr-2 flex-shrink-0" />
               <div className="text-sm text-gray-600">
                 {business.operatingHours.monday ? `Lun-Vie: ${business.operatingHours.monday}` : 'Cerrado los lunes'}
                 <br />
@@ -65,7 +65,7 @@ const BusinessList: React.FC<BusinessListProps> = ({ businesses }) => {
                 {business.phone && (
                   <a 
                     href={`tel:${business.phone}`} 
-                    className="inline-flex items-center text-gray-600 hover:text-primary-600 text-sm"
+                    className="inline-flex items-center text-gray-600 hover:bg-accent-500 text-sm"
                   >
                     <Phone className="h-3 w-3 mr-1" />
                     <span>Llamar</span>
@@ -75,7 +75,7 @@ const BusinessList: React.FC<BusinessListProps> = ({ businesses }) => {
                 {business.email && (
                   <a 
                     href={`mailto:${business.email}`} 
-                    className="inline-flex items-center text-gray-600 hover:text-primary-600 text-sm"
+                    className="inline-flex items-center text-gray-600 hover:bg-accent-500 text-sm"
                   >
                     <Mail className="h-3 w-3 mr-1" />
                     <span>Email</span>

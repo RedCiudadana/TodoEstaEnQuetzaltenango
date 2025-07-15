@@ -39,19 +39,19 @@ const EventsPreview: React.FC<EventsPreviewProps> = ({ events }) => {
             </h3>
             
             <div className="flex items-center mb-2">
-              <Calendar className="h-4 w-4 text-primary-500 mr-2 flex-shrink-0" />
+              <Calendar className="h-4 w-4 text-accent-500 mr-2 flex-shrink-0" />
               <p className="text-gray-600 text-sm">{formatDate(event.date)}</p>
             </div>
             
             <div className="flex items-center mb-2">
-              <Clock className="h-4 w-4 text-primary-500 mr-2 flex-shrink-0" />
+              <Clock className="h-4 w-4 text-accent-500 mr-2 flex-shrink-0" />
               <p className="text-gray-600 text-sm">
                 {event.startTime} {event.endTime ? `- ${event.endTime}` : ''}
               </p>
             </div>
             
             <div className="flex items-start mb-3">
-              <MapPin className="h-4 w-4 text-primary-500 mt-1 mr-2 flex-shrink-0" />
+              <MapPin className="h-4 w-4 text-accent-500 mt-1 mr-2 flex-shrink-0" />
               <div>
                 <p className="text-gray-600 text-sm">{event.location}</p>
                 <p className="text-gray-500 text-sm">{event.municipality}</p>

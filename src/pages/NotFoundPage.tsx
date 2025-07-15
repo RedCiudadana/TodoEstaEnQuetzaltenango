@@ -6,7 +6,7 @@ const NotFoundPage: React.FC = () => {
   return (
     <div className="container mx-auto px-4 py-16">
       <div className="max-w-lg mx-auto text-center">
-        <div className="text-primary-500 mb-6">
+        <div className="text-accent-500 mb-6">
           <svg 
             xmlns="http://www.w3.org/2000/svg" 
             viewBox="0 0 24 24" 

@@ -18,7 +18,7 @@ const AboutPage: React.FC = () => {
           <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-6 md:p-8">
             <div className="flex items-center mb-4">
               <div className="bg-primary-100 w-12 h-12 rounded-full flex items-center justify-center mr-4">
-                <Target className="h-6 w-6 text-primary-600" />
+                <Target className="h-6 w-6 text-accent-500" />
               </div>
               <h2 className="text-2xl font-heading font-semibold text-gray-800">
                 Nuestra Misión
@@ -91,7 +91,7 @@ const AboutPage: React.FC = () => {
             
             <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-6 flex flex-col items-center text-center">
               <div className="bg-primary-100 w-16 h-16 rounded-full flex items-center justify-center mb-4">
-                <Users className="h-8 w-8 text-primary-600" />
+                <Users className="h-8 w-8 text-accent-500" />
               </div>
               <h3 className="text-xl font-heading font-semibold text-gray-800 mb-2">
                 Conectamos

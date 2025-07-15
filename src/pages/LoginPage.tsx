@@ -30,7 +30,7 @@ const LoginPage: React.FC = () => {
         </h2>
         <p className="mt-2 text-center text-sm text-gray-600">
           ¿No tienes una cuenta?{' '}
-          <Link to="/registrar" className="font-medium text-primary-600 hover:text-primary-500">
+          <Link to="/registrar" className="font-medium text-accent-500 hover:text-accent-500">
             Regístrate aquí
           </Link>
         </p>
@@ -96,7 +96,7 @@ const LoginPage: React.FC = () => {
                   id="remember_me"
                   name="remember_me"
                   type="checkbox"
-                  className="h-4 w-4 text-primary-600 focus:ring-primary-500 border-gray-300 rounded"
+                  className="h-4 w-4 text-accent-500 focus:ring-primary-500 border-gray-300 rounded"
                 />
                 <label htmlFor="remember_me" className="ml-2 block text-sm text-gray-900">
                   Recordarme
@@ -104,7 +104,7 @@ const LoginPage: React.FC = () => {
               </div>
 
               <div className="text-sm">
-                <a href="#" className="font-medium text-primary-600 hover:text-primary-500">
+                <a href="#" className="font-medium text-accent-500 hover:text-accent-500">
                   ¿Olvidaste tu contraseña?
                 </a>
               </div>

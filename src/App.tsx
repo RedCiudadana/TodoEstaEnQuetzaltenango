@@ -17,6 +17,7 @@ import DevDocsPage from './pages/DevDocsPage';
 import DigitalDiagnosticPage from './pages/DigitalDiagnosticPage';
 import NotFoundPage from './pages/NotFoundPage';
 import LoginPage from './pages/LoginPage';
+import './index.css';
 
 const App: React.FC = () => {
   return (

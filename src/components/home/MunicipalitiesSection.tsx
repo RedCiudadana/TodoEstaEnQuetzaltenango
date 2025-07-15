@@ -93,7 +93,7 @@ const MunicipalitiesSection: React.FC = () => {
                 
                 {/* Business count badge */}
                 <div className="absolute top-4 right-4 bg-white/90 backdrop-blur-sm rounded-full px-3 py-1 flex items-center">
-                  <MapPin className="h-3 w-3 text-primary-500 mr-1" />
+                  <MapPin className="h-3 w-3 text-accent-500 mr-1" />
                   <span className="text-xs font-medium text-gray-700">
                     {municipality.businessCount} negocios
                   </span>

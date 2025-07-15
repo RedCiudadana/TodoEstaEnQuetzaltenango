@@ -533,7 +533,7 @@ const RegisterBusinessPage: React.FC = () => {
                 <div
                   key={step}
                   className={`flex items-center justify-center w-8 h-8 rounded-full ${
-                    step <= currentStep ? 'bg-primary-500 text-white' : 'bg-gray-200 text-gray-500'
+                    step <= currentStep ? 'bg-accent-500 text-white' : 'bg-gray-200 text-gray-500'
                   }`}
                 >
                   {step}
@@ -567,11 +567,11 @@ const RegisterBusinessPage: React.FC = () => {
 
           <p className="mt-4 text-sm text-gray-500 text-center">
             Al registrar tu negocio, aceptas nuestros{' '}
-            <a href="#" className="text-primary-600 hover:text-primary-500">
+            <a href="#" className="text-accent-500 hover:text-accent-500">
               Términos y Condiciones
             </a>{' '}
             y{' '}
-            <a href="#" className="text-primary-600 hover:text-primary-500">
+            <a href="#" className="text-accent-500 hover:text-accent-500">
               Política de Privacidad
             </a>
           </p>

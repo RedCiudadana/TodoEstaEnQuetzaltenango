@@ -17,7 +17,7 @@ const DevDocsPage: React.FC = () => {
           <section className="mb-12">
             <div className="card p-6">
               <h2 className="text-2xl font-heading font-bold text-gray-800 mb-6 flex items-center">
-                <Code className="h-6 w-6 text-primary-500 mr-2" />
+                <Code className="h-6 w-6 text-accent-500 mr-2" />
                 Stack Tecnológico
               </h2>
 
@@ -57,7 +57,7 @@ const DevDocsPage: React.FC = () => {
           <section className="mb-12">
             <div className="card p-6">
               <h2 className="text-2xl font-heading font-bold text-gray-800 mb-6 flex items-center">
-                <Database className="h-6 w-6 text-primary-500 mr-2" />
+                <Database className="h-6 w-6 text-accent-500 mr-2" />
                 Estructura de la Base de Datos
               </h2>
 
@@ -95,7 +95,7 @@ const DevDocsPage: React.FC = () => {
           <section className="mb-12">
             <div className="card p-6">
               <h2 className="text-2xl font-heading font-bold text-gray-800 mb-6 flex items-center">
-                <Terminal className="h-6 w-6 text-primary-500 mr-2" />
+                <Terminal className="h-6 w-6 text-accent-500 mr-2" />
                 Desarrollo Local
               </h2>
 
@@ -130,7 +130,7 @@ const DevDocsPage: React.FC = () => {
           <section className="mb-12">
             <div className="card p-6">
               <h2 className="text-2xl font-heading font-bold text-gray-800 mb-6 flex items-center">
-                <Server className="h-6 w-6 text-primary-500 mr-2" />
+                <Server className="h-6 w-6 text-accent-500 mr-2" />
                 Variables de Entorno
               </h2>
 
@@ -150,7 +150,7 @@ const DevDocsPage: React.FC = () => {
           <section className="mb-12">
             <div className="card p-6">
               <h2 className="text-2xl font-heading font-bold text-gray-800 mb-6 flex items-center">
-                <Package className="h-6 w-6 text-primary-500 mr-2" />
+                <Package className="h-6 w-6 text-accent-500 mr-2" />
                 Dependencias Principales
               </h2>
 
@@ -182,7 +182,7 @@ const DevDocsPage: React.FC = () => {
           <section>
             <div className="card p-6">
               <h2 className="text-2xl font-heading font-bold text-gray-800 mb-6 flex items-center">
-                <GitBranch className="h-6 w-6 text-primary-500 mr-2" />
+                <GitBranch className="h-6 w-6 text-accent-500 mr-2" />
                 Contribuir
               </h2>
 

@@ -16,15 +16,15 @@ const SupportPage: React.FC = () => {
           {/* Quick Links */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
             <a href="#buscar" className="card card-hover p-4 flex items-center">
-              <Search className="h-5 w-5 text-primary-500 mr-2" />
+              <Search className="h-5 w-5 text-accent-500 mr-2" />
               <span>Cómo Buscar</span>
             </a>
             <a href="#registrar" className="card card-hover p-4 flex items-center">
-              <Store className="h-5 w-5 text-primary-500 mr-2" />
+              <Store className="h-5 w-5 text-accent-500 mr-2" />
               <span>Registrar Negocio</span>
             </a>
             <a href="#eventos" className="card card-hover p-4 flex items-center">
-              <Calendar className="h-5 w-5 text-primary-500 mr-2" />
+              <Calendar className="h-5 w-5 text-accent-500 mr-2" />
               <span>Eventos</span>
             </a>
           </div>
@@ -33,7 +33,7 @@ const SupportPage: React.FC = () => {
           <section id="buscar" className="mb-12">
             <div className="card p-6">
               <h2 className="text-2xl font-heading font-bold text-gray-800 mb-4 flex items-center">
-                <Search className="h-6 w-6 text-primary-500 mr-2" />
+                <Search className="h-6 w-6 text-accent-500 mr-2" />
                 Cómo Buscar Negocios
               </h2>
 
@@ -68,7 +68,7 @@ const SupportPage: React.FC = () => {
           <section id="registrar" className="mb-12">
             <div className="card p-6">
               <h2 className="text-2xl font-heading font-bold text-gray-800 mb-4 flex items-center">
-                <Store className="h-6 w-6 text-primary-500 mr-2" />
+                <Store className="h-6 w-6 text-accent-500 mr-2" />
                 Registrar tu Negocio
               </h2>
 
@@ -113,7 +113,7 @@ const SupportPage: React.FC = () => {
           <section id="eventos" className="mb-12">
             <div className="card p-6">
               <h2 className="text-2xl font-heading font-bold text-gray-800 mb-4 flex items-center">
-                <Calendar className="h-6 w-6 text-primary-500 mr-2" />
+                <Calendar className="h-6 w-6 text-accent-500 mr-2" />
                 Eventos y Actividades
               </h2>
 
@@ -144,7 +144,7 @@ const SupportPage: React.FC = () => {
           <section id="faq" className="mb-12">
             <div className="card p-6">
               <h2 className="text-2xl font-heading font-bold text-gray-800 mb-4 flex items-center">
-                <HelpCircle className="h-6 w-6 text-primary-500 mr-2" />
+                <HelpCircle className="h-6 w-6 text-accent-500 mr-2" />
                 Preguntas Frecuentes
               </h2>
 
@@ -184,7 +184,7 @@ const SupportPage: React.FC = () => {
           <section id="contacto" className="mb-12">
             <div className="card p-6">
               <h2 className="text-2xl font-heading font-bold text-gray-800 mb-4 flex items-center">
-                <AlertCircle className="h-6 w-6 text-primary-500 mr-2" />
+                <AlertCircle className="h-6 w-6 text-accent-500 mr-2" />
                 ¿Necesitas más ayuda?
               </h2>
 
@@ -195,12 +195,12 @@ const SupportPage: React.FC = () => {
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <a href="mailto:soporte@todoestaq.com" className="bg-gray-50 p-4 rounded-lg flex items-center hover:bg-gray-100">
-                    <Mail className="h-5 w-5 text-primary-500 mr-2" />
+                    <Mail className="h-5 w-5 text-accent-500 mr-2" />
                     <span>soporte@todoestaq.com</span>
                   </a>
 
                   <a href="tel:+50277777777" className="bg-gray-50 p-4 rounded-lg flex items-center hover:bg-gray-100">
-                    <Phone className="h-5 w-5 text-primary-500 mr-2" />
+                    <Phone className="h-5 w-5 text-accent-500 mr-2" />
                     <span>+502 7777-7777</span>
                   </a>
                 </div>

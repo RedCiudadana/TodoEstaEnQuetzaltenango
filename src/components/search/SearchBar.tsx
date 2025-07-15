@@ -43,7 +43,7 @@ const SearchBar: React.FC<SearchBarProps> = ({
       />
       <button
         type="submit"
-        className="bg-primary-500 hover:bg-primary-600 text-white px-5 flex items-center justify-center transition-colors"
+        className="bg-accent-500 hover:bg-accent-600 text-white px-5 flex items-center justify-center transition-colors"
         aria-label="Search"
       >
         <Search size={20} />

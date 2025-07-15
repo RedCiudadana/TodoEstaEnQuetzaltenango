@@ -132,7 +132,7 @@ const EventsPage: React.FC = () => {
                 <h3 className="font-heading font-semibold text-gray-800">Filtros</h3>
                 <button 
                   onClick={toggleFilters}
-                  className="md:hidden text-gray-500 hover:text-primary-500"
+                  className="md:hidden text-gray-500 hover:text-accent-500"
                   aria-label={isFiltersOpen ? "Ocultar filtros" : "Mostrar filtros"}
                 >
                   <Filter size={20} />
@@ -210,7 +210,7 @@ const EventsPage: React.FC = () => {
             
             <div className="mt-4 p-4 bg-white rounded-lg shadow-sm border border-gray-200">
               <div className="flex items-start">
-                <CalendarIcon className="h-5 w-5 text-primary-500 mt-0.5 mr-2" />
+                <CalendarIcon className="h-5 w-5 text-accent-500 mt-0.5 mr-2" />
                 <div>
                   <p className="text-gray-700 font-medium">
                     {filteredEvents.length} {filteredEvents.length === 1 ? 'evento encontrado' : 'eventos encontrados'}
@@ -244,7 +244,7 @@ const EventsPage: React.FC = () => {
                           alt={event.name} 
                           className="w-full h-full object-cover"
                         />
-                        <div className="absolute top-0 left-0 bg-primary-500 text-white px-3 py-1 text-sm font-medium">
+                        <div className="absolute top-0 left-0 bg-accent-500 text-white px-3 py-1 text-sm font-medium">
                           {formatDate(event.date)}
                         </div>
                       </div>

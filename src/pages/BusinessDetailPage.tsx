@@ -119,7 +119,7 @@ const BusinessDetailPage: React.FC = () => {
             </Link>
             
             <div>
-              <span className="inline-block bg-primary-500 text-white px-3 py-1 rounded-full text-sm font-medium mb-2">
+              <span className="inline-block bg-accent-500 text-white px-3 py-1 rounded-full text-sm font-medium mb-2">
                 {business.category}
               </span>
               <h1 className="text-3xl md:text-4xl font-heading font-bold text-white">
@@ -203,7 +203,7 @@ const BusinessDetailPage: React.FC = () => {
                 
                 <div className="space-y-4">
                   <div className="flex items-start">
-                    <MapPin className="h-5 w-5 text-primary-500 mt-1 mr-3 flex-shrink-0" />
+                    <MapPin className="h-5 w-5 text-accent-500 mt-1 mr-3 flex-shrink-0" />
                     <div>
                       <p className="text-gray-700">{business.address}</p>
                       <p className="text-gray-500">{business.municipality}</p>
@@ -212,10 +212,10 @@ const BusinessDetailPage: React.FC = () => {
                   
                   {business.phone && (
                     <div className="flex items-center">
-                      <Phone className="h-5 w-5 text-primary-500 mr-3 flex-shrink-0" />
+                      <Phone className="h-5 w-5 text-accent-500 mr-3 flex-shrink-0" />
                       <a 
                         href={`tel:${business.phone}`} 
-                        className="text-gray-700 hover:text-primary-600"
+                        className="text-gray-700 hover:text-accent-500"
                       >
                         {business.phone}
                       </a>
@@ -224,10 +224,10 @@ const BusinessDetailPage: React.FC = () => {
                   
                   {business.email && (
                     <div className="flex items-center">
-                      <Mail className="h-5 w-5 text-primary-500 mr-3 flex-shrink-0" />
+                      <Mail className="h-5 w-5 text-accent-500 mr-3 flex-shrink-0" />
                       <a 
                         href={`mailto:${business.email}`} 
-                        className="text-gray-700 hover:text-primary-600 break-all"
+                        className="text-gray-700 hover:text-accent-500 break-all"
                       >
                         {business.email}
                       </a>
@@ -236,12 +236,12 @@ const BusinessDetailPage: React.FC = () => {
                   
                   {business.website && (
                     <div className="flex items-center">
-                      <Globe className="h-5 w-5 text-primary-500 mr-3 flex-shrink-0" />
+                      <Globe className="h-5 w-5 text-accent-500 mr-3 flex-shrink-0" />
                       <a 
                         href={business.website} 
                         target="_blank" 
                         rel="noopener noreferrer" 
-                        className="text-gray-700 hover:text-primary-600 break-all"
+                        className="text-gray-700 hover:text-accent-500 break-all"
                       >
                         {business.website.replace(/^https?:\/\//, '')}
                       </a>
@@ -259,7 +259,7 @@ const BusinessDetailPage: React.FC = () => {
                           href={business.socialNetworks.facebook} 
                           target="_blank" 
                           rel="noopener noreferrer"
-                          className="text-gray-600 hover:text-primary-600 transition-colors"
+                          className="text-gray-600 hover:text-accent-500 transition-colors"
                           aria-label="Facebook"
                         >
                           <Facebook size={20} />
@@ -271,7 +271,7 @@ const BusinessDetailPage: React.FC = () => {
                           href={business.socialNetworks.instagram} 
                           target="_blank" 
                           rel="noopener noreferrer"
-                          className="text-gray-600 hover:text-primary-600 transition-colors"
+                          className="text-gray-600 hover:bg-accent-500 transition-colors"
                           aria-label="Instagram"
                         >
                           <Instagram size={20} />
@@ -283,7 +283,7 @@ const BusinessDetailPage: React.FC = () => {
                           href={business.socialNetworks.twitter} 
                           target="_blank" 
                           rel="noopener noreferrer"
-                          className="text-gray-600 hover:text-primary-600 transition-colors"
+                          className="text-gray-600 hover:text-accent-500 transition-colors"
                           aria-label="Twitter"
                         >
                           <Twitter size={20} />
@@ -299,7 +299,7 @@ const BusinessDetailPage: React.FC = () => {
             <div className="bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden">
               <div className="p-6">
                 <h3 className="text-xl font-heading font-semibold mb-4 text-gray-800 flex items-center">
-                  <Clock className="h-5 w-5 mr-2 text-primary-500" />
+                  <Clock className="h-5 w-5 mr-2 text-accent-500" />
                   Horario de Atención
                 </h3>
                 

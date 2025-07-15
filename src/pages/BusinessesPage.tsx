@@ -75,7 +75,7 @@ const BusinessesPage: React.FC = () => {
               onClick={() => toggleView('list')}
               className={`px-4 py-2 flex items-center gap-2 ${
                 view === 'list' 
-                  ? 'bg-primary-500 text-white' 
+                  ? 'bg-accent-500 text-white' 
                   : 'bg-white text-gray-700 hover:bg-gray-50'
               }`}
               aria-label="Ver como lista"
@@ -89,7 +89,7 @@ const BusinessesPage: React.FC = () => {
               onClick={() => toggleView('map')}
               className={`px-4 py-2 flex items-center gap-2 ${
                 view === 'map' 
-                  ? 'bg-primary-500 text-white' 
+                  ? 'bg-accent-500 text-white' 
                   : 'bg-white text-gray-700 hover:bg-gray-50'
               }`}
               aria-label="Ver como mapa"
@@ -118,7 +118,7 @@ const BusinessesPage: React.FC = () => {
             
             <div className="mt-4 p-4 bg-white rounded-lg shadow-sm border border-gray-200">
               <div className="flex items-start">
-                <MapPin className="h-5 w-5 text-primary-500 mt-0.5 mr-2" />
+                <MapPin className="h-5 w-5 text-accent-500 mt-0.5 mr-2" />
                 <div>
                   <p className="text-gray-700 font-medium">
                     {loading ? (

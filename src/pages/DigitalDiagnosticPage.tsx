@@ -318,7 +318,7 @@ const DigitalDiagnosticPage: React.FC = () => {
             <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-8 mb-8 text-center">
               <div className="mb-6">
                 <div className="inline-flex items-center justify-center w-24 h-24 bg-primary-100 rounded-full mb-4">
-                  <TrendingUp className="h-12 w-12 text-primary-500" />
+                  <TrendingUp className="h-12 w-12 text-accent-500" />
                 </div>
                 <h2 className="text-3xl font-heading font-bold text-gray-800 mb-2">
                   Tu Puntuación: {assessmentResult.score}%
@@ -330,7 +330,7 @@ const DigitalDiagnosticPage: React.FC = () => {
 
               <div className="w-full bg-gray-200 rounded-full h-4 mb-4">
                 <div 
-                  className="bg-primary-500 h-4 rounded-full transition-all duration-1000"
+                  className="bg-accent-500 h-4 rounded-full transition-all duration-1000"
                   style={{ width: `${assessmentResult.score}%` }}
                 ></div>
               </div>
@@ -376,7 +376,7 @@ const DigitalDiagnosticPage: React.FC = () => {
             {/* Recommendations */}
             <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-6 mb-8">
               <h3 className="text-xl font-heading font-semibold text-gray-800 mb-6 flex items-center">
-                <AlertCircle className="h-5 w-5 text-primary-500 mr-2" />
+                <AlertCircle className="h-5 w-5 text-accent-500 mr-2" />
                 Recomendaciones Personalizadas
               </h3>
 
@@ -393,7 +393,7 @@ const DigitalDiagnosticPage: React.FC = () => {
             {/* Recommended Courses */}
             <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-6 mb-8">
               <h3 className="text-xl font-heading font-semibold text-gray-800 mb-6 flex items-center">
-                <Zap className="h-5 w-5 text-primary-500 mr-2" />
+                <Zap className="h-5 w-5 text-accent-500 mr-2" />
                 Cursos Recomendados de Conecta Futuro
               </h3>
 
@@ -415,7 +415,7 @@ const DigitalDiagnosticPage: React.FC = () => {
                         href={course.url}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-flex items-center text-primary-600 hover:text-primary-700 font-medium text-sm"
+                        className="inline-flex items-center text-accent-500 hover:text-primary-700 font-medium text-sm"
                       >
                         Ver Curso
                         <ChevronRight className="h-4 w-4 ml-1" />
@@ -480,7 +480,7 @@ const DigitalDiagnosticPage: React.FC = () => {
             </div>
             <div className="w-full bg-gray-200 rounded-full h-2">
               <div 
-                className="bg-primary-500 h-2 rounded-full transition-all duration-300"
+                className="bg-accent-500 h-2 rounded-full transition-all duration-300"
                 style={{ width: `${((currentQuestion + 1) / questions.length) * 100}%` }}
               ></div>
             </div>
