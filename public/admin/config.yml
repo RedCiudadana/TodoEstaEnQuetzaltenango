@@ -24,7 +24,14 @@ collections:
     slug: "{{slug}}"
     fields:
       - { label: "Nombre del Negocio", name: "nombre", widget: "string" }
-      - { label: "Categoría", name: "categoria", widget: "string" }
+      - 
+        label: "Categorías"
+        name: "categorias"
+        widget: "list"
+        field:
+          label: "Categoría"
+          name: "categoria"
+          widget: "string"
       - { label: "Fotografía del Negocio", name: "foto_negocio", widget: "image", required: false }
       - { label: "Municipio", name: "municipio", widget: "string" }
       - { label: "Dirección", name: "direccion", widget: "string" }
