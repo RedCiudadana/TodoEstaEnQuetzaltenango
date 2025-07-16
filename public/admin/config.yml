@@ -25,11 +25,14 @@ collections:
     fields:
       - { label: "Nombre del Negocio", name: "nombre", widget: "string" }
       - { label: "Categoría", name: "categoria", widget: "string" }
+      - { label: "Fotografía del Negocio", name: "foto_negocio", widget: "image", required: false }
       - { label: "Municipio", name: "municipio", widget: "string" }
-      - { label: "Dirección y ubicación en Google Maps", name: "direccion", widget: "string" }
+      - { label: "Dirección", name: "direccion", widget: "string" }
+      - { label: "Ubicación en Google Maps", name: "direccion", widget: "string" }
       - { label: "Descripción del Negocio", name: "descripcion", widget: "text" }
       - { label: "Teléfono", name: "telefono", widget: "string" }
       - { label: "Correo Electrónico", name: "correo_electronico", widget: "string" }
+      - { label: "Menú o Catálogo", name: "menu_catalogo", widget: "string", required: false }
       - { label: "Sitio Web", name: "sitio_web", widget: "string" }
       - { label: "Pago en Efectivo", name: "pago_efectivo", widget: "boolean", default: false }
       - { label: "Pago con Tarjeta", name: "pago_tarjeta", widget: "boolean", default: false }
