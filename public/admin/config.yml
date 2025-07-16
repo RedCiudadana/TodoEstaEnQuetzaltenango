@@ -1,9 +1,10 @@
 backend:
   name: git-gateway
-  repo: RedCiudadana/Conecta-Futuro
+  repo: RedCiudadana/TodoEstaEnQuetzaltenango
   branch: main
-  identity_url: https://auth.decapbridge.com/sites/e0f05e32-27b9-4041-9b01-a06878fc1d6b
+  identity_url: https://auth.decapbridge.com/sites/f6c98682-1f4c-48ef-9994-0a248fe25dec
   gateway_url: https://gateway.decapbridge.com
+
   commit_messages:
     create: Create {{collection}} “{{slug}}” - {{author-name}} <{{author-login}}> via DecapBridge
     update: Update {{collection}} “{{slug}}” - {{author-name}} <{{author-login}}> via DecapBridge
