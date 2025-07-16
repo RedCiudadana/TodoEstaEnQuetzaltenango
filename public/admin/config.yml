@@ -23,7 +23,7 @@ collections:
     create: true
     slug: "{{slug}}"
     fields:
-      - { label: "Nombre del Negocio", name: "nombre", widget: "string" }
+      - { label: "Nombre del Negocio", name: "title", widget: "string" }
       - 
         label: "Categorías"
         name: "categorias"
@@ -44,9 +44,9 @@ collections:
       - { label: "Pago en Efectivo", name: "pago_efectivo", widget: "boolean", default: false }
       - { label: "Pago con Tarjeta", name: "pago_tarjeta", widget: "boolean", default: false }
       - { label: "Pago por Transferencia", name: "pago_transferencia", widget: "boolean", default: false }
-      - { label: "Lunes a Viernes", name: "horario_lunes_viernes", widget: "boolean", default: false }
-      - { label: "Sábado", name: "horario_sabado", widget: "boolean", default: false }
-      - { label: "Domingo", name: "horario_domingo", widget: "boolean", default: false }
+      - { label: "Lunes a Viernes", name: "horario_lunes_viernes", widget: "string"}
+      - { label: "Sábado", name: "horario_sabado", widget: "string"}
+      - { label: "Domingo", name: "horario_domingo", widget: "string"}
       - { label: "Facebook", name: "facebook", widget: "string", required: false }
       - { label: "Instagram", name: "instagram", widget: "string", required: false }
       - { label: "TikTok", name: "tiktok", widget: "string", required: false }
