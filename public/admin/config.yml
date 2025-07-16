@@ -28,7 +28,7 @@ collections:
       - { label: "Fotografía del Negocio", name: "foto_negocio", widget: "image", required: false }
       - { label: "Municipio", name: "municipio", widget: "string" }
       - { label: "Dirección", name: "direccion", widget: "string" }
-      - { label: "Ubicación en Google Maps", name: "direccion", widget: "string" }
+      - { label: "Ubicación en Google Maps", name: "ubicacion", widget: "string" }
       - { label: "Descripción del Negocio", name: "descripcion", widget: "text" }
       - { label: "Teléfono", name: "telefono", widget: "string" }
       - { label: "Correo Electrónico", name: "correo_electronico", widget: "string" }
