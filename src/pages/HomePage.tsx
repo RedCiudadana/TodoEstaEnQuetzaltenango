@@ -16,6 +16,7 @@ import Logo3 from '../assets/images/logos/TEQ-08.png';
 
 const HomePage: React.FC = () => {
   const { businesses, loading, error } = useBusinesses();
+  // Selección de negocios destacados (puedes ajustar la lógica)
   const featuredBusinesses = businesses.slice(0, 3);
   const upcomingEvents = events.slice(0, 2);
 

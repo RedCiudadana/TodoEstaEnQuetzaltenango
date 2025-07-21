@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { MapPin, Clock, Phone, Mail, Globe, Facebook, Instagram, Twitter, CreditCard, DollarSign, ArrowLeft } from 'lucide-react';
-import { businesses } from '../data/mockData';
-import { Business } from '../types';
+import { getBusinessesFromMarkdown } from '../data/loadBusinesses';
+import type { BusinessMarkdown } from '../types';
 import BusinessMap from '../components/map/BusinessMap';
 
 const BusinessDetailPage: React.FC = () => {
   const { id } = useParams<{ id: string }>();
-  const [business, setBusiness] = useState<Business | null>(null);
+  const [business, setBusiness] = useState<BusinessMarkdown | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const [activePhoto, setActivePhoto] = useState(0);
@@ -17,16 +17,12 @@ const BusinessDetailPage: React.FC = () => {
       try {
         setLoading(true);
         setError(null);
-
-        // Simulate API call delay
-        await new Promise(resolve => setTimeout(resolve, 300));
-
-        const foundBusiness = businesses.find(b => b.id === id);
-
+        const allBusinesses = await getBusinessesFromMarkdown();
+        // Buscar por nombre o por un campo único (ajusta si tienes un slug o id único)
+        const foundBusiness = allBusinesses.find(b => b.nombre === id);
         if (!foundBusiness) {
           throw new Error('Business not found');
         }
-
         setBusiness(foundBusiness);
       } catch (err) {
         setError(err instanceof Error ? err.message : 'An error occurred while fetching the business');
@@ -34,7 +30,6 @@ const BusinessDetailPage: React.FC = () => {
         setLoading(false);
       }
     }
-
     if (id) {
       fetchBusiness();
     }
@@ -70,29 +65,33 @@ const BusinessDetailPage: React.FC = () => {
   const renderPaymentMethods = () => {
     return (
       <div className="flex flex-wrap gap-2">
-        {business.paymentMethods.map((method, index) => {
-          let icon;
-          switch (method.toLowerCase()) {
-            case 'efectivo':
-              icon = <DollarSign className="h-4 w-4" />;
-              break;
-            case 'tarjeta':
-              icon = <CreditCard className="h-4 w-4" />;
-              break;
-            default:
-              icon = <DollarSign className="h-4 w-4" />;
-          }
-          
-          return (
-            <span 
-              key={index} 
-              className="inline-flex items-center bg-gray-100 px-3 py-1 rounded-full text-sm text-gray-700"
-            >
-              {icon}
-              <span className="ml-1">{method}</span>
-            </span>
-          );
-        })}
+        {business.pago_efectivo && (
+          <span 
+            key="efectivo" 
+            className="inline-flex items-center bg-gray-100 px-3 py-1 rounded-full text-sm text-gray-700"
+          >
+            <DollarSign className="h-4 w-4" />
+            <span className="ml-1">Efectivo</span>
+          </span>
+        )}
+        {business.pago_tarjeta && (
+          <span 
+            key="tarjeta" 
+            className="inline-flex items-center bg-gray-100 px-3 py-1 rounded-full text-sm text-gray-700"
+          >
+            <CreditCard className="h-4 w-4" />
+            <span className="ml-1">Tarjeta</span>
+          </span>
+        )}
+        {business.pago_transferencia && (
+          <span 
+            key="transferencia" 
+            className="inline-flex items-center bg-gray-100 px-3 py-1 rounded-full text-sm text-gray-700"
+          >
+            <DollarSign className="h-4 w-4" />
+            <span className="ml-1">Transferencia</span>
+          </span>
+        )}
       </div>
     );
   };
@@ -101,11 +100,17 @@ const BusinessDetailPage: React.FC = () => {
     <div>
       {/* Hero section with main photo */}
       <div className="relative h-80 bg-secondary-800">
-        <img 
-          src={business.photos[activePhoto]} 
-          alt={business.name} 
-          className="w-full h-full object-cover"
-        />
+        {business.fotos && business.fotos.length > 0 ? (
+          <img 
+            src={business.fotos[activePhoto]} 
+            alt={business.nombre} 
+            className="w-full h-full object-cover"
+          />
+        ) : (
+          <div className="w-full h-full bg-gray-500 flex items-center justify-center text-white text-lg font-bold">
+            No hay fotos disponibles
+          </div>
+        )}
         <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
         
         <div className="absolute bottom-0 w-full p-6">
@@ -119,11 +124,13 @@ const BusinessDetailPage: React.FC = () => {
             </Link>
             
             <div>
-              <span className="inline-block bg-accent-500 text-white px-3 py-1 rounded-full text-sm font-medium mb-2">
-                {business.category}
-              </span>
+              {business.categorias && business.categorias.length > 0 && (
+                <span className="inline-block bg-accent-500 text-white px-3 py-1 rounded-full text-sm font-medium mb-2">
+                  {business.categorias[0]}
+                </span>
+              )}
               <h1 className="text-3xl md:text-4xl font-heading font-bold text-white">
-                {business.name}
+                {business.nombre}
               </h1>
             </div>
           </div>
@@ -131,11 +138,11 @@ const BusinessDetailPage: React.FC = () => {
       </div>
       
       {/* Thumbnail navigation */}
-      {business.photos.length > 1 && (
+      {business.fotos && business.fotos.length > 1 && (
         <div className="bg-white border-b border-gray-200">
           <div className="container mx-auto px-4 py-2">
             <div className="flex space-x-2 overflow-x-auto pb-2">
-              {business.photos.map((photo, index) => (
+              {business.fotos.map((photo, index) => (
                 <button
                   key={index}
                   onClick={() => setActivePhoto(index)}
@@ -145,7 +152,7 @@ const BusinessDetailPage: React.FC = () => {
                 >
                   <img 
                     src={photo} 
-                    alt={`${business.name} - Foto ${index + 1}`}
+                    alt={`${business.nombre} - Foto ${index + 1}`}
                     className="h-full w-full object-cover"
                   />
                 </button>
@@ -162,11 +169,11 @@ const BusinessDetailPage: React.FC = () => {
             <div className="bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden mb-8">
               <div className="p-6">
                 <h2 className="text-2xl font-heading font-semibold mb-4 text-gray-800">
-                  Acerca de {business.name}
+                  Acerca de {business.nombre}
                 </h2>
                 
                 <p className="text-gray-700 mb-6 leading-relaxed">
-                  {business.description}
+                  {business.descripcion}
                 </p>
                 
                 <div className="mb-6">
@@ -186,9 +193,9 @@ const BusinessDetailPage: React.FC = () => {
                   Ubicación
                 </h2>
                 
-                <div className="h-[400px] rounded-lg overflow-hidden">
+                {/* <div className="h-[400px] rounded-lg overflow-hidden">
                   <BusinessMap businesses={[business]} />
-                </div>
+                </div> */}
               </div>
             </div>
           </div>
@@ -202,61 +209,63 @@ const BusinessDetailPage: React.FC = () => {
                 </h3>
                 
                 <div className="space-y-4">
-                  <div className="flex items-start">
-                    <MapPin className="h-5 w-5 text-accent-500 mt-1 mr-3 flex-shrink-0" />
-                    <div>
-                      <p className="text-gray-700">{business.address}</p>
-                      <p className="text-gray-500">{business.municipality}</p>
+                  {business.direccion && (
+                    <div className="flex items-start">
+                      <MapPin className="h-5 w-5 text-accent-500 mt-1 mr-3 flex-shrink-0" />
+                      <div>
+                        <p className="text-gray-700">{business.direccion}</p>
+                        {business.municipio && <p className="text-gray-500">{business.municipio}</p>}
+                      </div>
                     </div>
-                  </div>
+                  )}
                   
-                  {business.phone && (
+                  {business.telefono && (
                     <div className="flex items-center">
                       <Phone className="h-5 w-5 text-accent-500 mr-3 flex-shrink-0" />
                       <a 
-                        href={`tel:${business.phone}`} 
+                        href={`tel:${business.telefono}`} 
                         className="text-gray-700 hover:text-accent-500"
                       >
-                        {business.phone}
+                        {business.telefono}
                       </a>
                     </div>
                   )}
                   
-                  {business.email && (
+                  {business.correo_electronico && (
                     <div className="flex items-center">
                       <Mail className="h-5 w-5 text-accent-500 mr-3 flex-shrink-0" />
                       <a 
-                        href={`mailto:${business.email}`} 
+                        href={`mailto:${business.correo_electronico}`} 
                         className="text-gray-700 hover:text-accent-500 break-all"
                       >
-                        {business.email}
+                        {business.correo_electronico}
                       </a>
                     </div>
                   )}
                   
-                  {business.website && (
+                  {business.sitio_web && (
                     <div className="flex items-center">
                       <Globe className="h-5 w-5 text-accent-500 mr-3 flex-shrink-0" />
                       <a 
-                        href={business.website} 
+                        href={business.sitio_web} 
                         target="_blank" 
                         rel="noopener noreferrer" 
                         className="text-gray-700 hover:text-accent-500 break-all"
                       >
-                        {business.website.replace(/^https?:\/\//, '')}
+                        {business.sitio_web.replace(/^https?:\/\//, '')}
                       </a>
                     </div>
                   )}
                 </div>
                 
                 {/* Social Networks */}
-                {business.socialNetworks && (
+                {business.facebook && (
                   <div className="mt-6">
                     <h4 className="font-medium text-gray-700 mb-3">Redes Sociales</h4>
                     <div className="flex space-x-3">
-                      {business.socialNetworks.facebook && (
+                      {business.facebook && (
                         <a 
-                          href={business.socialNetworks.facebook} 
+                          href={business.facebook} 
                           target="_blank" 
                           rel="noopener noreferrer"
                           className="text-gray-600 hover:text-accent-500 transition-colors"
@@ -266,9 +275,9 @@ const BusinessDetailPage: React.FC = () => {
                         </a>
                       )}
                       
-                      {business.socialNetworks.instagram && (
+                      {business.instagram && (
                         <a 
-                          href={business.socialNetworks.instagram} 
+                          href={business.instagram} 
                           target="_blank" 
                           rel="noopener noreferrer"
                           className="text-gray-600 hover:bg-accent-500 transition-colors"
@@ -278,9 +287,9 @@ const BusinessDetailPage: React.FC = () => {
                         </a>
                       )}
                       
-                      {business.socialNetworks.twitter && (
+                      {/* {business.redes_sociales.twitter && (
                         <a 
-                          href={business.socialNetworks.twitter} 
+                          href={business.redes_sociales.twitter} 
                           target="_blank" 
                           rel="noopener noreferrer"
                           className="text-gray-600 hover:text-accent-500 transition-colors"
@@ -288,7 +297,7 @@ const BusinessDetailPage: React.FC = () => {
                         >
                           <Twitter size={20} />
                         </a>
-                      )}
+                      )} */}
                     </div>
                   </div>
                 )}
@@ -304,56 +313,28 @@ const BusinessDetailPage: React.FC = () => {
                 </h3>
                 
                 <div className="space-y-2">
-                  {business.operatingHours.monday && (
+                  {business.horario_lunes_viernes && (
                     <div className="flex justify-between">
-                      <span className="text-gray-600">Lunes</span>
-                      <span className="font-medium">{business.operatingHours.monday}</span>
+                      <span className="text-gray-600">Lunes a Viernes</span>
+                      <span className="font-medium">{business.horario_lunes_viernes}</span>
                     </div>
                   )}
                   
-                  {business.operatingHours.tuesday && (
-                    <div className="flex justify-between">
-                      <span className="text-gray-600">Martes</span>
-                      <span className="font-medium">{business.operatingHours.tuesday}</span>
-                    </div>
-                  )}
-                  
-                  {business.operatingHours.wednesday && (
-                    <div className="flex justify-between">
-                      <span className="text-gray-600">Miércoles</span>
-                      <span className="font-medium">{business.operatingHours.wednesday}</span>
-                    </div>
-                  )}
-                  
-                  {business.operatingHours.thursday && (
-                    <div className="flex justify-between">
-                      <span className="text-gray-600">Jueves</span>
-                      <span className="font-medium">{business.operatingHours.thursday}</span>
-                    </div>
-                  )}
-                  
-                  {business.operatingHours.friday && (
-                    <div className="flex justify-between">
-                      <span className="text-gray-600">Viernes</span>
-                      <span className="font-medium">{business.operatingHours.friday}</span>
-                    </div>
-                  )}
-                  
-                  {business.operatingHours.saturday && (
+                  {business.horario_sabado && (
                     <div className="flex justify-between">
                       <span className="text-gray-600">Sábado</span>
-                      <span className="font-medium">{business.operatingHours.saturday}</span>
+                      <span className="font-medium">{business.horario_sabado}</span>
                     </div>
                   )}
                   
-                  {business.operatingHours.sunday && (
+                  {business.horario_domingo && (
                     <div className="flex justify-between">
                       <span className="text-gray-600">Domingo</span>
-                      <span className="font-medium">{business.operatingHours.sunday}</span>
+                      <span className="font-medium">{business.horario_domingo}</span>
                     </div>
                   )}
                   
-                  {!business.operatingHours.sunday && (
+                  {!business.horario_domingo && (
                     <div className="flex justify-between">
                       <span className="text-gray-600">Domingo</span>
                       <span className="font-medium text-gray-500">Cerrado</span>

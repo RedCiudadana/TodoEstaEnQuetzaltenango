@@ -51,8 +51,8 @@ const BusinessFilters: React.FC<BusinessFiltersProps> = ({ filters, setFilters }
           <div className="mb-6">
             <h4 className="font-medium text-gray-700 mb-2">Categoría</h4>
             <select 
-              value={filters.category || ''}
-              onChange={(e) => setFilters({ ...filters, category: e.target.value || undefined })}
+              value={filters.categoria || ''}
+              onChange={(e) => setFilters({ ...filters, categoria: e.target.value || undefined })}
               className="select"
               aria-label="Filter by category"
             >
@@ -69,8 +69,8 @@ const BusinessFilters: React.FC<BusinessFiltersProps> = ({ filters, setFilters }
           <div className="mb-6">
             <h4 className="font-medium text-gray-700 mb-2">Municipio</h4>
             <select 
-              value={filters.municipality || ''}
-              onChange={(e) => setFilters({ ...filters, municipality: e.target.value || undefined })}
+              value={filters.municipio || ''}
+              onChange={(e) => setFilters({ ...filters, municipio: e.target.value || undefined })}
               className="select"
               aria-label="Filter by municipality"
             >

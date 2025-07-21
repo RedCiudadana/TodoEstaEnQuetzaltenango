@@ -1,13 +1,13 @@
 import { useState, useEffect } from 'react';
-import { businesses as mockBusinesses } from '../data/mockData';
-import type { Business } from '../types';
+import { getBusinessesFromMarkdown } from '../data/loadBusinesses';
+import type { BusinessMarkdown } from '../types';
 
 export function useBusinesses(filters?: {
-  name?: string;
-  category?: string;
-  municipality?: string;
+  nombre?: string;
+  categoria?: string;
+  municipio?: string;
 }) {
-  const [businesses, setBusinesses] = useState<Business[]>([]);
+  const [businesses, setBusinesses] = useState<BusinessMarkdown[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
@@ -17,29 +17,27 @@ export function useBusinesses(filters?: {
         setLoading(true);
         setError(null);
 
-        // Simulate API call delay
-        await new Promise(resolve => setTimeout(resolve, 500));
+        const allBusinesses = await getBusinessesFromMarkdown();
+        let filteredBusinesses = [...allBusinesses];
 
-        let filteredBusinesses = [...mockBusinesses];
-
-        // Apply filters
-        if (filters?.name) {
-          const searchTerm = filters.name.toLowerCase();
+        // Filtros
+        if (filters?.nombre) {
+          const searchTerm = filters.nombre.toLowerCase();
           filteredBusinesses = filteredBusinesses.filter(business =>
-            business.name.toLowerCase().includes(searchTerm) ||
-            business.description.toLowerCase().includes(searchTerm)
+            business.nombre.toLowerCase().includes(searchTerm) ||
+            (business.descripcion?.toLowerCase().includes(searchTerm) ?? false)
           );
         }
 
-        if (filters?.category) {
+        if (filters?.categoria) {
           filteredBusinesses = filteredBusinesses.filter(business =>
-            business.category.toLowerCase() === filters.category?.toLowerCase()
+            business.categorias.map(c => c.toLowerCase()).includes(filters.categoria!.toLowerCase())
           );
         }
 
-        if (filters?.municipality) {
+        if (filters?.municipio) {
           filteredBusinesses = filteredBusinesses.filter(business =>
-            business.municipality.toLowerCase() === filters.municipality?.toLowerCase()
+            business.municipio.toLowerCase() === filters.municipio!.toLowerCase()
           );
         }
 

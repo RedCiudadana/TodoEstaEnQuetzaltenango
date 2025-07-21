@@ -1,13 +1,13 @@
 import React, { useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import mapboxgl from 'mapbox-gl';
-import { Business } from '../../types';
+import { BusinessMarkdown } from '../../types';
 
 // Set Mapbox token from environment variable
 mapboxgl.accessToken = import.meta.env.VITE_MAPBOX_TOKEN;
 
 interface BusinessMapProps {
-  businesses: Business[];
+  businesses: BusinessMarkdown[];
 }
 
 const BusinessMap: React.FC<BusinessMapProps> = ({ businesses }) => {
@@ -43,9 +43,9 @@ const BusinessMap: React.FC<BusinessMapProps> = ({ businesses }) => {
         // Create popup content
         const popupHTML = `
           <div class="p-3">
-            <div class="font-bold mb-1">${business.name}</div>
-            <div class="text-sm text-gray-600 mb-2">${business.category}</div>
-            <div class="text-sm mb-2">${business.address}</div>
+            <div class="font-bold mb-1">${business.nombre}</div>
+            <div class="text-sm text-gray-600 mb-2">${business.categorias[0]}</div>
+            <div class="text-sm mb-2">${business.direccion}</div>
             <a 
               href="/negocios/${business.id}" 
               class="text-sm text-blue-600 hover:text-blue-800 font-medium"
@@ -70,14 +70,14 @@ const BusinessMap: React.FC<BusinessMapProps> = ({ businesses }) => {
         
         // Add marker to map
         const marker = new mapboxgl.Marker(el)
-          .setLngLat([business.location.lng, business.location.lat])
+          .setLngLat([business.ubicacion.lng, business.ubicacion.lat])
           .setPopup(popup)
           .addTo(map.current!);
         
         markers.current.push(marker);
         
         // Extend bounds to include this location
-        bounds.extend([business.location.lng, business.location.lat]);
+        bounds.extend([business.ubicacion.lng, business.ubicacion.lat]);
       });
       
       // Fit map to bounds with padding
@@ -88,7 +88,7 @@ const BusinessMap: React.FC<BusinessMapProps> = ({ businesses }) => {
         });
       } else if (businesses.length === 1) {
         map.current.flyTo({
-          center: [businesses[0].location.lng, businesses[0].location.lat],
+          center: [businesses[0].ubicacion.lng, businesses[0].ubicacion.lat],
           zoom: 15
         });
       }

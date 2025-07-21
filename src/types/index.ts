@@ -1,40 +1,23 @@
 // Business Types
-export interface Business {
-  id: string;
-  name: string;
-  description: string;
-  address: string;
-  municipality: string;
-  category: string;
-  subcategory?: string;
-  phone?: string;
-  email?: string;
-  website?: string;
-  socialNetworks?: {
-    facebook?: string;
-    instagram?: string;
-    twitter?: string;
-  };
-  operatingHours: OperatingHours;
-  location: {
-    lat: number;
-    lng: number;
-  };
-  paymentMethods: string[];
-  featuredProducts?: string[];
-  photos: string[];
-  createdAt: string;
-  updatedAt: string;
-}
-
-export interface OperatingHours {
-  monday?: string;
-  tuesday?: string;
-  wednesday?: string;
-  thursday?: string;
-  friday?: string;
-  saturday?: string;
-  sunday?: string;
+export interface BusinessMarkdown {
+  nombre: string;
+  categorias: string[];
+  municipio: string;
+  direccion: string;
+  ubicacion?: string;
+  descripcion?: string;
+  telefono?: string;
+  correo_electronico?: string;
+  sitio_web?: string;
+  pago_efectivo?: boolean;
+  pago_tarjeta?: boolean;
+  pago_transferencia?: boolean;
+  horario_lunes_viernes?: string;
+  horario_sabado?: string;
+  horario_domingo?: string;
+  facebook?: string;
+  instagram?: string;
+  fotos?: string[];
 }
 
 // Event Types
@@ -57,9 +40,9 @@ export interface Event {
 
 // Filter Types
 export interface BusinessFilters {
-  name?: string;
-  category?: string;
-  municipality?: string;
+  nombre?: string;
+  categoria?: string;
+  municipio?: string;
 }
 
 export interface EventFilters {

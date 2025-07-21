@@ -7,16 +7,23 @@ import BusinessFilters from '../components/business/BusinessFilters';
 import BusinessList from '../components/business/BusinessList';
 import BusinessMap from '../components/map/BusinessMap';
 import { useBusinesses } from '../hooks/useBusinesses';
-import { BusinessFilters as BusinessFiltersType } from '../types';
+import type { BusinessMarkdown } from '../types';
+
+// Define el tipo de filtros compatible con BusinessFilters
+interface BusinessFiltersType {
+  nombre?: string;
+  categoria?: string;
+  municipio?: string;
+}
 
 const BusinessesPage: React.FC = () => {
   const [searchParams, setSearchParams] = useSearchParams();
   const [view, setView] = useState<'list' | 'map'>('list');
   
   const initialFilters: BusinessFiltersType = {
-    name: searchParams.get('q') || undefined,
-    category: searchParams.get('categoria') || undefined,
-    municipality: searchParams.get('municipio') || undefined,
+    nombre: searchParams.get('q') || undefined,
+    categoria: searchParams.get('categoria') || undefined,
+    municipio: searchParams.get('municipio') || undefined,
   };
   
   const [filters, setFilters] = useState<BusinessFiltersType>(initialFilters);
@@ -25,9 +32,8 @@ const BusinessesPage: React.FC = () => {
   const handleSearch = (query: string) => {
     setFilters({
       ...filters,
-      name: query
+      nombre: query
     });
-    
     const params = new URLSearchParams(searchParams);
     if (query) {
       params.set('q', query);
@@ -104,7 +110,7 @@ const BusinessesPage: React.FC = () => {
         <div className="mb-6">
           <SearchBar 
             placeholder="Buscar negocios..." 
-            defaultValue={filters.name || ''}
+            defaultValue={filters.nombre || ''}
             onSearch={handleSearch}
           />
         </div>
@@ -130,8 +136,8 @@ const BusinessesPage: React.FC = () => {
                     )}
                   </p>
                   <p className="text-sm text-gray-500">
-                    {filters.municipality 
-                      ? `en ${filters.municipality}` 
+                    {filters.municipio 
+                      ? `en ${filters.municipio}` 
                       : 'en todo Quetzaltenango'}
                   </p>
                 </div>
