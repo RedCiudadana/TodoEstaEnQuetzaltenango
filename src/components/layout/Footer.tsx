@@ -16,9 +16,6 @@ const Footer: React.FC = () => {
           <div className="md:col-span-1">
             <div className="flex items-center mb-4">
               <Logo className="h-10 w-auto" />
-              <span className="ml-2 text-lg font-heading font-bold text-white">
-                TEQ
-              </span>
             </div>
             <p className="text-gray-300 text-sm mb-4">
               Una plataforma para promocionar los negocios locales y emprendimientos 
@@ -26,7 +23,7 @@ const Footer: React.FC = () => {
             </p>
             <div className="flex space-x-4">
               <a 
-                href="https://facebook.com" 
+                href="https://www.facebook.com/metropolidelosaltos " 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="text-gray-300 hover:text-accent-500 transition-colors"
@@ -35,7 +32,7 @@ const Footer: React.FC = () => {
                 <Facebook size={20} />
               </a>
               <a 
-                href="https://instagram.com" 
+                href="https://www.instagram.com/mancomunidad_metropoli" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="text-gray-300 hover:text-accent-500 transition-colors"
@@ -44,7 +41,7 @@ const Footer: React.FC = () => {
                 <Instagram size={20} />
               </a>
               <a 
-                href="https://twitter.com" 
+                href="https://x.com/GaMetropoli" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="text-gray-300 hover:text-accent-500 transition-colors"
@@ -73,17 +70,17 @@ const Footer: React.FC = () => {
                   Eventos
                 </Link>
               </li>
-              <li>
+              {/* <li>
                 <Link to="/diagnostico-digital" className="text-gray-300 hover:text-white transition-colors">
                   Diagnóstico Digital
                 </Link>
-              </li>
+              </li> */}
               <li>
                 <Link to="/acerca" className="text-gray-300 hover:text-white transition-colors">
                   Acerca
                 </Link>
               </li>
-              <li>
+              {/* <li>
                 {!user ? (
                   <button 
                     onClick={() => setIsLoginModalOpen(true)}
@@ -97,7 +94,7 @@ const Footer: React.FC = () => {
                     Registrar Negocio
                   </Link>
                 )}
-              </li>
+              </li> */}
             </ul>
           </div>
 
@@ -105,23 +102,38 @@ const Footer: React.FC = () => {
             <h3 className="font-heading font-semibold text-white text-lg mb-4">Municipios</h3>
             <ul className="space-y-2">
               <li>
+                <Link to="/negocios?municipio=Salcajá" className="text-gray-300 hover:text-white transition-colors">
+                  Salcajá
+                </Link>
+              </li>
+              <li>
+                <Link to="/negocios?municipio=San%20Juan%20Ostuncalco" className="text-gray-300 hover:text-white transition-colors">
+                  San Juan Ostuncalco
+                </Link>
+              </li>
+              <li>
+                <Link to="/negocios?municipio=San%20Mateo" className="text-gray-300 hover:text-white transition-colors">
+                  San Mateo
+                </Link>
+              </li>
+              <li>
+                <Link to="/negocios?municipio=Sibilia" className="text-gray-300 hover:text-white transition-colors">
+                  Sibilia
+                </Link>
+              </li>
+              <li>
                 <Link to="/negocios?municipio=Quetzaltenango" className="text-gray-300 hover:text-white transition-colors">
                   Quetzaltenango
                 </Link>
               </li>
               <li>
-                <Link to="/negocios?municipio=Coatepeque" className="text-gray-300 hover:text-white transition-colors">
-                  Coatepeque
+                <Link to="/negocios?municipio=Olintepeque" className="text-gray-300 hover:text-white transition-colors">
+                  Olintepeque
                 </Link>
               </li>
               <li>
-                <Link to="/negocios?municipio=Cantel" className="text-gray-300 hover:text-white transition-colors">
-                  Cantel
-                </Link>
-              </li>
-              <li>
-                <Link to="/negocios?municipio=Salcajá" className="text-gray-300 hover:text-white transition-colors">
-                  Salcajá
+                <Link to="/negocios?municipio=La%20Esperanza" className="text-gray-300 hover:text-white transition-colors">
+                  La Esperanza
                 </Link>
               </li>
               <li>
@@ -141,11 +153,20 @@ const Footer: React.FC = () => {
                   Quetzaltenango, Guatemala
                 </span>
               </li>
-              <li className="flex items-center">
+              {/* <li className="flex items-center">
                 <Phone className="h-5 w-5 mr-2 text-primary-400" />
                 <span className="text-gray-300">
                   +502 7777-7777
                 </span>
+              </li> */}
+              <li className="flex items-center">
+                <Mail className="h-5 w-5 mr-2 text-primary-400" />
+                <a 
+                  href="mailto:contacto@todoestaquetzaltenango.com" 
+                  className="text-gray-300 hover:text-white transition-colors"
+                >
+                  info@redciudadana.org.gt 
+                </a>
               </li>
               <li className="flex items-center">
                 <Mail className="h-5 w-5 mr-2 text-primary-400" />
@@ -153,10 +174,10 @@ const Footer: React.FC = () => {
                   href="mailto:contacto@todoestaquetzaltenango.com" 
                   className="text-gray-300 hover:text-white transition-colors"
                 >
-                  contacto@todoestaq.com
+                  gerencia@metropolidelosaltos.org
                 </a>
               </li>
-              <li className="flex items-center">
+              {/* <li className="flex items-center">
                 <Code className="h-5 w-5 mr-2 text-primary-400" />
                 <Link 
                   to="/docs" 
@@ -175,7 +196,7 @@ const Footer: React.FC = () => {
                 >
                   Conecta Futuro
                 </a>
-              </li>
+              </li> */}
             </ul>
           </div>
         </div>

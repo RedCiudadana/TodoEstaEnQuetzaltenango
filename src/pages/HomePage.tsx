@@ -48,10 +48,10 @@ const HomePage: React.FC = () => {
                 <Calendar className="h-4 w-4" />
                 <span>Ver Eventos</span>
               </Link>
-              <Link to="/diagnostico-digital" className="btn btn-accent">
+              {/* <Link to="/diagnostico-digital" className="btn btn-accent">
                 <Smartphone className="h-4 w-4" />
                 <span>Diagnóstico Digital</span>
-              </Link>
+              </Link> */}
               <Link to="/business/register" className="btn btn-accent">
                 <ShoppingBag className="h-4 w-4" />
                 <span>Registra tu Negocio</span>

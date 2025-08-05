@@ -1,5 +1,5 @@
 import React from 'react';
-import LogoImg from '../../assets/images/logos/TEQ-06.png';
+import LogoImg from '../../assets/images/logos/red_blanco.png';
 
 interface LogoProps {
   className?: string;

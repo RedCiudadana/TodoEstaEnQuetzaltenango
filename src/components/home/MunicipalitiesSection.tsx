@@ -10,28 +10,8 @@ interface Municipality {
   businessCount: number;
 }
 
+// ...existing code...
 const municipalities: Municipality[] = [
-  {
-    id: 'quetzaltenango',
-    name: 'Quetzaltenango',
-    image: 'https://images.pexels.com/photos/2129796/pexels-photo-2129796.png',
-    description: 'La ciudad altense, centro económico y cultural del occidente',
-    businessCount: 80
-  },
-  {
-    id: 'coatepeque',
-    name: 'Coatepeque',
-    image: 'https://images.pexels.com/photos/2608517/pexels-photo-2608517.jpeg',
-    description: 'Importante centro comercial y agrícola de la costa sur',
-    businessCount: 25
-  },
-  {
-    id: 'cantel',
-    name: 'Cantel',
-    image: 'https://images.pexels.com/photos/3184287/pexels-photo-3184287.jpeg',
-    description: 'Tradición textil y patrimonio industrial guatemalteco',
-    businessCount: 15
-  },
   {
     id: 'salcaja',
     name: 'Salcajá',
@@ -40,25 +20,46 @@ const municipalities: Municipality[] = [
     businessCount: 12
   },
   {
-    id: 'zunil',
-    name: 'Zunil',
-    image: 'https://images.pexels.com/photos/2286895/pexels-photo-2286895.jpeg',
-    description: 'Aguas termales y producción agrícola de calidad',
-    businessCount: 8
+    id: 'san-juan-ostuncalco',
+    name: 'San Juan Ostuncalco',
+    image: 'https://images.pexels.com/photos/2252584/pexels-photo-2252584.jpeg',
+    description: 'Paisajes montañosos y cultura ancestral',
+    businessCount: 7
   },
   {
-    id: 'almolonga',
-    name: 'Almolonga',
+    id: 'san-mateo',
+    name: 'San Mateo',
+    image: 'https://images.pexels.com/photos/3184287/pexels-photo-3184287.jpeg',
+    description: 'Tradición agrícola y comunidad acogedora',
+    businessCount: 5
+  },
+  {
+    id: 'sibilia',
+    name: 'Sibilia',
     image: 'https://images.pexels.com/photos/1458694/pexels-photo-1458694.jpeg',
-    description: 'El jardín de América, famoso por sus vegetales gigantes',
-    businessCount: 10
+    description: 'Naturaleza, tranquilidad y producción agrícola',
+    businessCount: 3
+  },
+  {
+    id: 'quetzaltenango',
+    name: 'Quetzaltenango',
+    image: 'https://images.pexels.com/photos/2129796/pexels-photo-2129796.png',
+    description: 'La ciudad altense, centro económico y cultural del occidente',
+    businessCount: 80
   },
   {
     id: 'olintepeque',
     name: 'Olintepeque',
-    image: 'https://images.pexels.com/photos/2252584/pexels-photo-2252584.jpeg',
+    image: 'https://images.pexels.com/photos/2286895/pexels-photo-2286895.jpeg',
     description: 'Tradición textil y hermosos paisajes montañosos',
     businessCount: 4
+  },
+  {
+    id: 'la-esperanza',
+    name: 'La Esperanza',
+    image: 'https://images.pexels.com/photos/2608517/pexels-photo-2608517.jpeg',
+    description: 'Crecimiento urbano y vida tranquila',
+    businessCount: 9
   }
 ];
 

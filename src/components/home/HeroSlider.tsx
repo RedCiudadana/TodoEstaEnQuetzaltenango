@@ -31,7 +31,7 @@ const slides: Slide[] = [
     },
     cta2: {
       text: 'Ver más',
-      link: '/ver-mas'
+      link: '/acerca'
     }
   }
 ];

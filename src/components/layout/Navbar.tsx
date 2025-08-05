@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { NavLink, Link, useNavigate } from 'react-router-dom';
-import { Menu, X, MapPin, Calendar, Info, ShoppingBag, LogOut, BarChart, HelpCircle, Smartphone } from 'lucide-react';
+import { Menu, X, MapPin, Calendar, Info, ShoppingBag, LogOut, BarChart, HelpCircle, Smartphone, Home } from 'lucide-react';
 import { useAuth } from '../../contexts/AuthContext';
 import Logo from './Logo';
 
@@ -29,6 +29,20 @@ const Navbar: React.FC = () => {
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-1">
             <NavLink
+              to="/"
+              className={({isActive}) =>
+                `px-3 py-2 rounded-md font-medium flex items-center ${
+                  isActive
+                    ? 'bg-accent-500 bg-primary-50'
+                    : 'text-gray-700 hover:bg-accent-500 hover:bg-gray-50'
+                }`
+              }
+            >
+              <Home className="mr-1 h-4 w-4" />
+              <span>Inicio</span>
+            </NavLink>
+            
+            <NavLink
               to="/negocios"
               className={({isActive}) =>
                 `px-3 py-2 rounded-md font-medium flex items-center ${
@@ -56,7 +70,7 @@ const Navbar: React.FC = () => {
               <span>Eventos</span>
             </NavLink>
 
-            <NavLink
+            {/* <NavLink
               to="/diagnostico-digital"
               className={({isActive}) =>
                 `px-3 py-2 rounded-md font-medium flex items-center ${
@@ -68,9 +82,9 @@ const Navbar: React.FC = () => {
             >
               <Smartphone className="mr-1 h-4 w-4" />
               <span>Diagnóstico Digital</span>
-            </NavLink>
+            </NavLink> */}
 
-            <NavLink
+            {/* <NavLink
               to="/acerca"
               className={({isActive}) =>
                 `px-3 py-2 rounded-md font-medium flex items-center ${
@@ -96,7 +110,7 @@ const Navbar: React.FC = () => {
             >
               <HelpCircle className="mr-1 h-4 w-4" />
               <span>Soporte</span>
-            </NavLink>
+            </NavLink> */}
 
             {user ? (
               <>
@@ -146,6 +160,24 @@ const Navbar: React.FC = () => {
       {isOpen && (
         <div className="md:hidden bg-white border-t border-gray-200">
           <div className="container mx-auto px-4 py-3 space-y-2">
+            
+            <NavLink
+              to="/"
+              className={({isActive}) =>
+                `block px-3 py-2 rounded-md font-medium ${
+                  isActive
+                    ? 'bg-accent-500 bg-primary-50'
+                    : 'text-gray-700 hover:bg-accent-500 hover:bg-gray-50'
+                }`
+              }
+              onClick={() => setIsOpen(false)}
+            >
+              <div className="flex items-center">
+                <Home className="mr-2 h-5 w-5" />
+                <span>Inicio</span>
+              </div>
+            </NavLink>
+            
             <NavLink
               to="/negocios"
               className={({isActive}) =>
@@ -180,7 +212,7 @@ const Navbar: React.FC = () => {
               </div>
             </NavLink>
 
-            <NavLink
+            {/* <NavLink
               to="/diagnostico-digital"
               className={({isActive}) =>
                 `block px-3 py-2 rounded-md font-medium ${
@@ -195,9 +227,9 @@ const Navbar: React.FC = () => {
                 <Smartphone className="mr-2 h-5 w-5" />
                 <span>Diagnóstico Digital</span>
               </div>
-            </NavLink>
+            </NavLink> */}
 
-            <NavLink
+            {/* <NavLink
               to="/acerca"
               className={({isActive}) =>
                 `block px-3 py-2 rounded-md font-medium ${
@@ -229,7 +261,7 @@ const Navbar: React.FC = () => {
                 <HelpCircle className="mr-2 h-5 w-5" />
                 <span>Soporte</span>
               </div>
-            </NavLink>
+            </NavLink> */}
 
             {user ? (
               <>
