@@ -1,5 +1,5 @@
 ---
-nombre: Artesanias Xekijel
+title: Artesanias Xekijel
 categorias:
   - Artesanías
   - Moda
@@ -19,9 +19,10 @@ sitio_web: n/a
 pago_efectivo: true
 pago_tarjeta: true
 pago_transferencia: false
-horario_lunes_viernes: "8 a.m.–6 p.m"
-horario_sabado: "8 a.m.–6 p.m."
-horario_domingo: "8 a.m.–1 p.m."
+horario_lunes_viernes: 8 a.m.–6 p.m
+horario_sabado: 8 a.m.–6 p.m.
+horario_domingo: 8 a.m.–1 p.m.
 facebook: https://www.facebook.com/artesanias.xekijel.guatemala/
+nombre: Artesanias Xekijel
 instagram: "@artesaniasxekijel"
 ---
