@@ -33,7 +33,7 @@ export async function getBusinessesFromMarkdown(): Promise<BusinessMarkdown[]> {
       const data = attributes as any;
       // Normalizar campos
       const negocio: BusinessMarkdown = {
-        nombre: data.nombre || '',
+        nombre: data.title || '',
         categorias: Array.isArray(data.categorias) ? data.categorias : (typeof data.categorias === 'string' ? [data.categorias] : []),
         municipio: data.municipio || '',
         direccion: data.direccion || '',
