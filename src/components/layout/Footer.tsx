@@ -4,6 +4,7 @@ import { MapPin, Phone, Mail, Facebook, Instagram, Twitter, LogIn, Code, Smartph
 import { useAuth } from '../../contexts/AuthContext';
 import LoginModal from '../auth/LoginModal';
 import Logo from './Logo';
+import logoBlanco from '../../assets/images/logos/red_blanco.png';
 
 const Footer: React.FC = () => {
   const [isLoginModalOpen, setIsLoginModalOpen] = useState(false);
@@ -15,7 +16,7 @@ const Footer: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div className="md:col-span-1">
             <div className="flex items-center mb-4">
-              <Logo className="h-10 w-auto" />
+              <img src={logoBlanco} alt="Logo" className="h-10 w-auto" />
             </div>
             <p className="text-gray-300 text-sm mb-4">
               Una plataforma para promocionar los negocios locales y emprendimientos 

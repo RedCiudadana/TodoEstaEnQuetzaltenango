@@ -21,9 +21,6 @@ const Navbar: React.FC = () => {
         <div className="flex justify-between items-center h-16">
           <Link to="/" className="flex items-center" onClick={() => setIsOpen(false)}>
             <Logo className="h-16 w-auto" />
-            <span className="ml-2 text-lg font-heading font-bold bg-accent-500 sm:hidden">
-              TEQ
-            </span>
           </Link>
 
           {/* Desktop Navigation */}

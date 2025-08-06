@@ -17,6 +17,15 @@ media_folder: "public/uploads"
 public_folder: "/uploads"
 
 collections:
+  - name: "categorias"
+    label: "Categorías"
+    folder: "src/content/categorias"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Nombre de la Categoría", name: "title", widget: "string" }
+      - { label: "Descripción", name: "descripcion", widget: "text" }
+
   - name: "negocios"
     label: "Negocios"
     folder: "src/content/negocios"
@@ -27,11 +36,13 @@ collections:
       - 
         label: "Categorías"
         name: "categorias"
-        widget: "list"
-        field:
-          label: "Categoría"
-          name: "categoria"
-          widget: "string"
+        widget: "relation"
+        collection: "categorias"
+        search_fields: ["title"]
+        value_field: "title"
+        display_fields: ["title"]
+        multiple: true
+        required: false
       - { label: "Fotografía del Negocio", name: "foto_negocio", widget: "image", required: false }
       - { label: "Municipio", name: "municipio", widget: "string" }
       - { label: "Dirección", name: "direccion", widget: "string" }
