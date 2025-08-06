@@ -25,6 +25,7 @@ collections:
     fields:
       - { label: "Nombre de la Categoría", name: "title", widget: "string" }
       - { label: "Descripción", name: "descripcion", widget: "text" }
+      - { label: "Icono", name: "icono", widget: "image", required: false }
 
   - name: "negocios"
     label: "Negocios"
