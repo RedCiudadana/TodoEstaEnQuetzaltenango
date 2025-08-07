@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Store, MapPin, Clock, Phone, Mail, Globe, Facebook, Instagram, Camera, X, AlertCircle } from 'lucide-react';
 import PageHeader from '../../components/common/PageHeader';
@@ -9,6 +9,7 @@ interface BusinessFormData {
   category: string;
   municipality: string;
   address: string;
+  locationUrl: string;
   description: string;
   phone: string;
   email: string;
@@ -28,10 +29,6 @@ interface BusinessFormData {
     instagram: string;
   };
   photos: string[];
-  location: {
-    lat: number;
-    lng: number;
-  };
 }
 
 const RegisterBusinessPage: React.FC = () => {
@@ -44,6 +41,7 @@ const RegisterBusinessPage: React.FC = () => {
     category: '',
     municipality: '',
     address: '',
+    locationUrl: '',
     description: '',
     phone: '',
     email: '',
@@ -63,10 +61,6 @@ const RegisterBusinessPage: React.FC = () => {
       instagram: '',
     },
     photos: [],
-    location: {
-      lat: 14.835,
-      lng: -91.518,
-    },
   });
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
@@ -131,31 +125,56 @@ const RegisterBusinessPage: React.FC = () => {
     }
   };
 
-  const removePhoto = (index: number) => {
-    const newPhotos = photos.filter((_, i) => i !== index);
-    setPhotos(newPhotos);
+  const MAX_PHOTO_URL_LENGTH = 350;
+
+  useEffect(() => {
     setFormData(prev => ({
       ...prev,
-      photos: newPhotos
+      photos: photos.filter(url => url)
     }));
-  };
+  }, [photos]);
+
+  const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwaTMF1VlLSlH-pLaUlmSiQmmMSEMllyyvOoWNPxAAV09rqBS7ClcG7uwyV3sE630mWPw/exec';
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setError(null);
-    
+
     try {
-      // Simulate form submission
-      await new Promise(resolve => setTimeout(resolve, 1000));
-      
-      // In a real app, you would send this data to your backend
-      console.log('Form submitted:', formData);
-      
-      // Navigate to success page
-      navigate('/business/register/success');
+      const params = new URLSearchParams();
+      params.append('timestamp', new Date().toISOString());
+      params.append('name', formData.name);
+      params.append('category', formData.category);
+      params.append('municipality', formData.municipality);
+      params.append('address', formData.address);
+      params.append('locationUrl', formData.locationUrl);
+      params.append('description', formData.description);
+      params.append('phone', formData.phone);
+      params.append('email', formData.email);
+      params.append('website', formData.website);
+      params.append('paymentMethods', formData.paymentMethods.join(', '));
+      params.append('operatingHours_monday', formData.operatingHours.monday);
+      params.append('operatingHours_saturday', formData.operatingHours.saturday);
+      params.append('operatingHours_sunday', formData.operatingHours.sunday);
+      params.append('facebook', formData.socialNetworks.facebook);
+      params.append('instagram', formData.socialNetworks.instagram);
+      params.append('photos', formData.photos.join(','));
+
+      const response = await fetch(`${SCRIPT_URL}?${params.toString()}`, {
+        method: 'GET',
+      });
+
+      if (!response.ok) throw new Error(`HTTP ${response.status}`);
+      const json = await response.json();
+
+      if (json.success) {
+        navigate('/business/register/success');
+      } else {
+        setError(json.error || 'Ocurrió un error al enviar el formulario');
+      }
     } catch (error) {
       console.error('Error submitting form:', error);
-      setError('An error occurred while submitting the form. Please try again.');
+      setError('Ocurrió un error al enviar el formulario. Por favor, intenta de nuevo.');
     }
   };
 
@@ -233,6 +252,22 @@ const RegisterBusinessPage: React.FC = () => {
             onChange={handleInputChange}
             className="mt-1 input"
             placeholder="Ej. 4ta Calle 8-24 Zona 1"
+          />
+        </div>
+
+        <div>
+          <label htmlFor="locationUrl" className="block text-sm font-medium text-gray-700">
+            Enlace de Ubicación (Google Maps) *
+          </label>
+          <input
+            type="url"
+            id="locationUrl"
+            name="locationUrl"
+            required
+            value={formData.locationUrl}
+            onChange={handleInputChange}
+            className="mt-1 input"
+            placeholder="Pega aquí el enlace de Google Maps"
           />
         </div>
 
@@ -460,40 +495,45 @@ const RegisterBusinessPage: React.FC = () => {
       <div>
         <h3 className="text-lg font-medium text-gray-900 mb-4">Fotografías del Negocio</h3>
         <p className="text-sm text-gray-500 mb-4">
-          Agrega hasta 5 fotografías de tu negocio. Las fotos ayudarán a los clientes a conocer mejor tu negocio.
+          Agrega hasta 5 fotografías usando enlaces. Las fotos ayudarán a los clientes a conocer mejor tu negocio.
         </p>
 
-        <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
-          {photos.map((photo, index) => (
-            <div key={index} className="relative">
-              <img
-                src={photo}
-                alt={`Foto ${index + 1}`}
-                className="w-full h-32 object-cover rounded-lg"
+        <div className="grid grid-cols-1 md:grid-cols-5 gap-4">
+          {[0, 1, 2, 3, 4].map((index) => (
+            <div key={index} className="space-y-2">
+              <label htmlFor={`photo-${index}`} className="text-sm font-medium text-gray-700 block">
+                Imagen {index + 1}
+              </label>
+              <input
+                id={`photo-${index}`}
+                type="url"
+                placeholder="https://..."
+                value={photos[index] || ''}
+                onChange={(e) => {
+                const url = e.target.value;
+                  if (url.length > MAX_PHOTO_URL_LENGTH) {
+                    setError('El enlace de la foto es demasiado largo (máx. 350 caracteres)');
+                    return;
+                  }
+                  setError(null);
+                  const newPhotos = [...photos];
+                  newPhotos[index] = url;
+                  setPhotos(newPhotos);
+                }}
+                className="w-full rounded-md border border-gray-300 px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
               />
-              <button
-                type="button"
-                onClick={() => removePhoto(index)}
-                className="absolute -top-2 -right-2 bg-red-500 text-white rounded-full p-1"
-              >
-                <X size={16} />
-              </button>
+              {photos[index] && (
+                <img
+                  src={photos[index]}
+                  alt={`Imagen ${index + 1}`}
+                  className="w-full h-24 object-cover rounded-md border"
+                  onError={(e) =>
+                    (e.currentTarget.src = 'https://via.placeholder.com/150?text=URL+inválida')
+                  }
+                />
+              )}
             </div>
           ))}
-
-          {photos.length < 5 && (
-            <label className="border-2 border-dashed border-gray-300 rounded-lg p-4 h-32 flex flex-col items-center justify-center cursor-pointer hover:border-gray-400">
-              <Camera className="h-8 w-8 text-gray-400" />
-              <span className="mt-2 text-sm text-gray-500">Agregar foto</span>
-              <input
-                type="file"
-                accept="image/*"
-                onChange={handlePhotoUpload}
-                className="hidden"
-                multiple
-              />
-            </label>
-          )}
         </div>
       </div>
 
@@ -505,10 +545,7 @@ const RegisterBusinessPage: React.FC = () => {
         >
           Anterior
         </button>
-        <button
-          type="submit"
-          className="btn btn-primary"
-        >
+        <button type="submit" className="btn btn-primary">
           Registrar Negocio
         </button>
       </div>
