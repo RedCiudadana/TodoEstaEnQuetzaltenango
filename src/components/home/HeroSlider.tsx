@@ -72,7 +72,7 @@ const HeroSlider: React.FC = () => {
   return (
     <div className="relative h-[80vh] overflow-hidden flex flex-row">
       {/* Columna Izquierda: Contenido */}
-      <div className="w-full md:w-1/2 flex items-center z-10 relative bg-black/40 md:bg-transparent">
+      <div className="w-full md:w-1/2 flex items-center z-10 relative md:bg-transparent">
         <div className="container mx-auto px-4 ml-8 md:ml-16">
           <div className="max-w-3xl">
             <h1 className="text-4xl md:text-6xl font-heading font-bold text-gray-800 mb-6 animate-fade-in">

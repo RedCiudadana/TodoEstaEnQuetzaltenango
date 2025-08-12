@@ -62,3 +62,18 @@ collections:
       - { label: "Facebook", name: "facebook", widget: "string", required: false }
       - { label: "Instagram", name: "instagram", widget: "string", required: false }
       - { label: "TikTok", name: "tiktok", widget: "string", required: false }
+  - name: "eventos"
+    label: "Eventos"
+    folder: "src/content/eventos"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - { label: "Nombre", name: "title", widget: "string" }
+      - { label: "Descripción", name: "descripcion", widget: "text" }
+      - { label: "Fecha", name: "fecha", widget: "datetime", default: "" }
+      - { label: "Horario", name: "horario", widget: "string" }
+      - { label: "Lugar", name: "lugar", widget: "string" }
+      - { label: "Organiza", name: "organiza", widget: "string" }
+      - { label: "Municipio", name: "municipio", widget: "string" }
+      - { label: "Categoría", name: "categoria", widget: "string" }
+      - { label: "Foto", name: "foto", widget: "image", required: false }

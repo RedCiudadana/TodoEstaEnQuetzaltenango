@@ -95,6 +95,17 @@ const BusinessDetailPage: React.FC = () => {
       </div>
     );
   };
+
+  function MapaIframe() {
+    if (!business || !business.ubicacion) {
+      return <p>El negocio no compartió su ubicación</p>
+    }
+    const urlEmbed = business.ubicacion;
+
+    return (
+      <a href={urlEmbed} target="_blank" className='bg-accent-500 hover:bg-secondary-400 text-white p-2 my-2 rounded-full'>Ver ubicación</a>
+    );
+  }
   
   return (
     <div>
@@ -193,9 +204,7 @@ const BusinessDetailPage: React.FC = () => {
                   Ubicación
                 </h2>
                 
-                {/* <div className="h-[400px] rounded-lg overflow-hidden">
-                  <BusinessMap businesses={[business]} />
-                </div> */}
+                <MapaIframe/>
               </div>
             </div>
           </div>

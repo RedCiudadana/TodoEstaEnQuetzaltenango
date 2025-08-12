@@ -17,49 +17,49 @@ const municipalities: Municipality[] = [
     name: 'Salcajá',
     image: 'https://images.pexels.com/photos/6192334/pexels-photo-6192334.jpeg',
     description: 'Cuna del rompope y rica tradición artesanal',
-    businessCount: 12
+    businessCount: 0
   },
   {
     id: 'san-juan-ostuncalco',
     name: 'San Juan Ostuncalco',
     image: 'https://images.pexels.com/photos/2252584/pexels-photo-2252584.jpeg',
     description: 'Paisajes montañosos y cultura ancestral',
-    businessCount: 7
+    businessCount: 0
   },
   {
     id: 'san-mateo',
     name: 'San Mateo',
     image: 'https://images.pexels.com/photos/3184287/pexels-photo-3184287.jpeg',
     description: 'Tradición agrícola y comunidad acogedora',
-    businessCount: 5
+    businessCount: 0
   },
   {
     id: 'sibilia',
     name: 'Sibilia',
     image: 'https://images.pexels.com/photos/1458694/pexels-photo-1458694.jpeg',
     description: 'Naturaleza, tranquilidad y producción agrícola',
-    businessCount: 3
+    businessCount: 0
   },
   {
     id: 'quetzaltenango',
     name: 'Quetzaltenango',
     image: 'https://images.pexels.com/photos/2129796/pexels-photo-2129796.png',
     description: 'La ciudad altense, centro económico y cultural del occidente',
-    businessCount: 80
+    businessCount: 1
   },
   {
     id: 'olintepeque',
     name: 'Olintepeque',
     image: 'https://images.pexels.com/photos/2286895/pexels-photo-2286895.jpeg',
     description: 'Tradición textil y hermosos paisajes montañosos',
-    businessCount: 4
+    businessCount: 0
   },
   {
     id: 'la-esperanza',
     name: 'La Esperanza',
     image: 'https://images.pexels.com/photos/2608517/pexels-photo-2608517.jpeg',
     description: 'Crecimiento urbano y vida tranquila',
-    businessCount: 9
+    businessCount: 0
   }
 ];
 
