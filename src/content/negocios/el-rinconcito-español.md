@@ -12,7 +12,7 @@ sitio_web: n/a
 pago_efectivo: true
 pago_tarjeta: true
 pago_transferencia: true
-horario_lunes_viernes: 24 horas
-horario_sabado: 24 horas
-horario_domingo: 24 horas
+horario_lunes_viernes: Lunes - Miércoles, 12–10 p.m. y Jueves - Viernes 12–11 p.m.
+horario_sabado: 12–11 p.m
+horario_domingo: 12–11 p.m
 ---
