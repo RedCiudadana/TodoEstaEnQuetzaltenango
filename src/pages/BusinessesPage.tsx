@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useMemo, useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import { MapPin, List, Map as MapIcon } from 'lucide-react';
 import PageHeader from '../components/common/PageHeader';
@@ -7,7 +7,7 @@ import BusinessFilters from '../components/business/BusinessFilters';
 import BusinessList from '../components/business/BusinessList';
 import BusinessMap from '../components/map/BusinessMap';
 import { useBusinesses } from '../hooks/useBusinesses';
-import type { BusinessMarkdown } from '../types';
+import { municipalities as municipalityOptions } from '../data/mockData';
 
 // Define el tipo de filtros compatible con BusinessFilters
 interface BusinessFiltersType {
@@ -28,6 +28,10 @@ const BusinessesPage: React.FC = () => {
   
   const [filters, setFilters] = useState<BusinessFiltersType>(initialFilters);
   const { businesses: filteredBusinesses, loading, error } = useBusinesses(filters);
+  const selectedMunicipalityName = useMemo(() => {
+    if (!filters.municipio) return null;
+    return municipalityOptions.find(m => m.id === filters.municipio)?.name || filters.municipio;
+  }, [filters.municipio]);
   
   const handleSearch = (query: string) => {
     setFilters({
@@ -135,8 +139,8 @@ const BusinessesPage: React.FC = () => {
                     )}
                   </p>
                   <p className="text-sm text-gray-500">
-                    {filters.municipio 
-                      ? `en ${filters.municipio}` 
+                    {selectedMunicipalityName 
+                      ? `en ${selectedMunicipalityName}` 
                       : 'en todo Quetzaltenango'}
                   </p>
                 </div>

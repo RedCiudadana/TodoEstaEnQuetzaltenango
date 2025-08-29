@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { getBusinessesFromMarkdown } from '../data/loadBusinesses';
 import type { BusinessMarkdown } from '../types';
+import { toSlug } from '../lib/slug';
 
 export function useBusinesses(filters?: {
   nombre?: string;
@@ -36,8 +37,9 @@ export function useBusinesses(filters?: {
         }
 
         if (filters?.municipio) {
+          const wantedMunicipalitySlug = toSlug(filters.municipio);
           filteredBusinesses = filteredBusinesses.filter(business =>
-            business.municipio.toLowerCase() === filters.municipio!.toLowerCase()
+            toSlug(business.municipio) === wantedMunicipalitySlug
           );
         }
 

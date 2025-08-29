@@ -175,7 +175,7 @@ const Footer: React.FC = () => {
                   href="mailto:contacto@todoestaquetzaltenango.com" 
                   className="text-gray-300 hover:text-white transition-colors"
                 >
-                  gerencia@metropolidelosaltos.org
+                  info@metropolidelosaltos.org
                 </a>
               </li>
               {/* <li className="flex items-center">

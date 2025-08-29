@@ -226,7 +226,7 @@ const EventsPage: React.FC = () => {
           </div>
           
           <div className="md:col-span-3">
-            {filteredEvents.length === 0 ? (
+            {filteredEvents.length !== 0 ? (
               <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-8 text-center">
                 <h3 className="text-xl font-semibold mb-2">No se encontraron eventos</h3>
                 <p className="text-gray-600 mb-4">

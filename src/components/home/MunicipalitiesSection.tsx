@@ -1,6 +1,8 @@
-import React from 'react';
+import React, { useEffect, useMemo, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { MapPin, ArrowRight } from 'lucide-react';
+import { getBusinessesFromMarkdown } from '../../data/loadBusinesses';
+import { toSlug } from '../../lib/slug';
 
 interface Municipality {
   id: string;
@@ -11,7 +13,7 @@ interface Municipality {
 }
 
 // ...existing code...
-const municipalities: Municipality[] = [
+const baseMunicipalities: Municipality[] = [
   {
     id: 'salcaja',
     name: 'Salcajá',
@@ -64,6 +66,28 @@ const municipalities: Municipality[] = [
 ];
 
 const MunicipalitiesSection: React.FC = () => {
+  const [businessCounts, setBusinessCounts] = useState<Record<string, number>>({});
+
+  useEffect(() => {
+    (async () => {
+      const businesses = await getBusinessesFromMarkdown();
+      const counts: Record<string, number> = {};
+      for (const b of businesses) {
+        const slug = toSlug(b.municipio);
+        counts[slug] = (counts[slug] || 0) + 1;
+      }
+      setBusinessCounts(counts);
+    })();
+  }, []);
+
+  const municipalities = useMemo(() =>
+    baseMunicipalities.map(m => ({
+      ...m,
+      businessCount: businessCounts[m.id] || 0,
+    })),
+    [businessCounts]
+  );
+
   return (
     <section className="py-16 bg-gradient-to-br from-gray-50 to-white">
       <div className="container mx-auto px-4">
