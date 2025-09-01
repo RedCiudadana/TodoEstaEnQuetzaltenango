@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { MapPin, ArrowRight } from 'lucide-react';
 import { getBusinessesFromMarkdown } from '../../data/loadBusinesses';
 import { toSlug } from '../../lib/slug';
-import Salcaja from '../../assets/images/municipios/salcaja.jpg';
+import Salcaja from '../../assets/images/municipios/Salcaja.jpg';
 import SanJuanO from '../../assets/images/municipios/San Juan Ostuncalco.jpeg';
 import SanMateo from '../../assets/images/municipios/san mateo.jpg';
 import Sibilia from '../../assets/images/municipios/Sibilia.jpg';
