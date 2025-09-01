@@ -3,6 +3,13 @@ import { Link } from 'react-router-dom';
 import { MapPin, ArrowRight } from 'lucide-react';
 import { getBusinessesFromMarkdown } from '../../data/loadBusinesses';
 import { toSlug } from '../../lib/slug';
+import Salcaja from '../../assets/images/municipios/salcaja.jpg';
+import SanJuanO from '../../assets/images/municipios/San Juan Ostuncalco.jpeg';
+import SanMateo from '../../assets/images/municipios/san mateo.jpg';
+import Sibilia from '../../assets/images/municipios/Sibilia.jpg';
+import Quetzaltenango from '../../assets/images/municipios/Quetzaltenango.webp';
+import Olintepeque from '../../assets/images/municipios/olintepeque.jpg';
+import LaEsperanza from '../../assets/images/municipios/la_esperanza.jpg';
 
 interface Municipality {
   id: string;
@@ -17,49 +24,49 @@ const baseMunicipalities: Municipality[] = [
   {
     id: 'salcaja',
     name: 'Salcajá',
-    image: 'https://images.pexels.com/photos/6192334/pexels-photo-6192334.jpeg',
+    image: Salcaja,
     description: 'Cuna del rompope y rica tradición artesanal',
     businessCount: 0
   },
   {
     id: 'san-juan-ostuncalco',
     name: 'San Juan Ostuncalco',
-    image: 'https://images.pexels.com/photos/2252584/pexels-photo-2252584.jpeg',
+    image: SanJuanO,
     description: 'Paisajes montañosos y cultura ancestral',
     businessCount: 0
   },
   {
     id: 'san-mateo',
     name: 'San Mateo',
-    image: 'https://images.pexels.com/photos/3184287/pexels-photo-3184287.jpeg',
+    image: SanMateo,
     description: 'Tradición agrícola y comunidad acogedora',
     businessCount: 0
   },
   {
     id: 'sibilia',
     name: 'Sibilia',
-    image: 'https://images.pexels.com/photos/1458694/pexels-photo-1458694.jpeg',
+    image: Sibilia,
     description: 'Naturaleza, tranquilidad y producción agrícola',
     businessCount: 0
   },
   {
     id: 'quetzaltenango',
     name: 'Quetzaltenango',
-    image: 'https://images.pexels.com/photos/2129796/pexels-photo-2129796.png',
+    image: Quetzaltenango,
     description: 'La ciudad altense, centro económico y cultural del occidente',
     businessCount: 1
   },
   {
     id: 'olintepeque',
     name: 'Olintepeque',
-    image: 'https://images.pexels.com/photos/2286895/pexels-photo-2286895.jpeg',
+    image: Olintepeque,
     description: 'Tradición textil y hermosos paisajes montañosos',
     businessCount: 0
   },
   {
     id: 'la-esperanza',
     name: 'La Esperanza',
-    image: 'https://images.pexels.com/photos/2608517/pexels-photo-2608517.jpeg',
+    image: LaEsperanza,
     description: 'Crecimiento urbano y vida tranquila',
     businessCount: 0
   }
