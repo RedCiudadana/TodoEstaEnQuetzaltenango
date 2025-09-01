@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Filter } from 'lucide-react';
-import { categories, municipalities } from '../../data/mockData';
+import { municipalities } from '../../data/mockData';
+import { getAvailableCategories } from '../../data/loadBusinesses';
 import { BusinessFilters as BusinessFiltersType } from '../../types';
 
 interface BusinessFiltersProps {
@@ -10,6 +11,25 @@ interface BusinessFiltersProps {
 
 const BusinessFilters: React.FC<BusinessFiltersProps> = ({ filters, setFilters }) => {
   const [isOpen, setIsOpen] = useState(false);
+  const [availableCategories, setAvailableCategories] = useState<string[]>([]);
+  const [loadingCategories, setLoadingCategories] = useState(true);
+  
+  // Cargar las categorías disponibles de los negocios existentes
+  useEffect(() => {
+    async function loadCategories() {
+      try {
+        setLoadingCategories(true);
+        const categories = await getAvailableCategories();
+        setAvailableCategories(categories);
+      } catch (error) {
+        console.error('Error loading categories:', error);
+      } finally {
+        setLoadingCategories(false);
+      }
+    }
+    
+    loadCategories();
+  }, []);
   
   // Close filters on window resize (mobile responsiveness)
   useEffect(() => {
@@ -55,11 +75,14 @@ const BusinessFilters: React.FC<BusinessFiltersProps> = ({ filters, setFilters }
               onChange={(e) => setFilters({ ...filters, categoria: e.target.value || undefined })}
               className="select"
               aria-label="Filter by category"
+              disabled={loadingCategories}
             >
-              <option value="">Todas las categorías</option>
-              {categories.map(category => (
-                <option key={category.id} value={category.id}>
-                  {category.name}
+              <option value="">
+                {loadingCategories ? 'Cargando categorías...' : 'Todas las categorías'}
+              </option>
+              {availableCategories.map(category => (
+                <option key={category} value={category}>
+                  {category}
                 </option>
               ))}
             </select>

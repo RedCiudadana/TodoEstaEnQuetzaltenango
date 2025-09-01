@@ -60,4 +60,18 @@ export async function getBusinessesFromMarkdown(): Promise<BusinessMarkdown[]> {
     console.error('Error loading businesses from markdown:', e);
     return [];
   }
+}
+
+// Función para obtener las categorías únicas de los negocios existentes
+export async function getAvailableCategories(): Promise<string[]> {
+  try {
+    const businesses = await getBusinessesFromMarkdown();
+    const allCategories = businesses.flatMap(business => business.categorias);
+    const uniqueCategories = [...new Set(allCategories)].sort();
+    console.log('Categorías disponibles:', uniqueCategories);
+    return uniqueCategories;
+  } catch (e) {
+    console.error('Error getting available categories:', e);
+    return [];
+  }
 } 

@@ -30,10 +30,14 @@ export function useBusinesses(filters?: {
           );
         }
 
-        if (filters?.categoria) {
-          filteredBusinesses = filteredBusinesses.filter(business =>
-            business.categorias.map(c => c.toLowerCase()).includes(filters.categoria!.toLowerCase())
-          );
+        if (filters?.categoria) {     
+          // Corregir el filtro por categoría para comparar nombres exactos
+          filteredBusinesses = filteredBusinesses.filter(business => {
+            const hasCategory = business.categorias.some(categoria => 
+              categoria.toLowerCase() === filters.categoria!.toLowerCase()
+            );
+            return hasCategory;
+          });
         }
 
         if (filters?.municipio) {
@@ -42,7 +46,6 @@ export function useBusinesses(filters?: {
             toSlug(business.municipio) === wantedMunicipalitySlug
           );
         }
-
         setBusinesses(filteredBusinesses);
       } catch (err) {
         console.error('Error in fetchBusinesses:', err);

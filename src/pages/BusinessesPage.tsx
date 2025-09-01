@@ -33,18 +33,44 @@ const BusinessesPage: React.FC = () => {
     return municipalityOptions.find(m => m.id === filters.municipio)?.name || filters.municipio;
   }, [filters.municipio]);
   
-  const handleSearch = (query: string) => {
-    setFilters({
-      ...filters,
-      nombre: query
-    });
+  // Función para actualizar los parámetros de URL cuando cambien los filtros
+  const updateURLParams = (newFilters: BusinessFiltersType) => {
     const params = new URLSearchParams(searchParams);
-    if (query) {
-      params.set('q', query);
+    
+    if (newFilters.nombre) {
+      params.set('q', newFilters.nombre);
     } else {
       params.delete('q');
     }
+    
+    if (newFilters.categoria) {
+      params.set('categoria', newFilters.categoria);
+    } else {
+      params.delete('categoria');
+    }
+    
+    if (newFilters.municipio) {
+      params.set('municipio', newFilters.municipio);
+    } else {
+      params.delete('municipio');
+    }
+    
     setSearchParams(params);
+  };
+  
+  // Función para manejar cambios en los filtros
+  const handleFilterChange = (newFilters: BusinessFiltersType) => {
+    setFilters(newFilters);
+    updateURLParams(newFilters);
+  };
+  
+  const handleSearch = (query: string) => {
+    const newFilters = {
+      ...filters,
+      nombre: query
+    };
+    setFilters(newFilters);
+    updateURLParams(newFilters);
   };
   
   const toggleView = (newView: 'list' | 'map') => {
@@ -122,7 +148,7 @@ const BusinessesPage: React.FC = () => {
           <div className="md:col-span-1">
             <BusinessFilters 
               filters={filters} 
-              setFilters={setFilters} 
+              setFilters={handleFilterChange} 
             />
             
             <div className="mt-4 p-4 bg-white rounded-lg shadow-sm border border-gray-200">
