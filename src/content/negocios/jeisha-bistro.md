@@ -2,7 +2,7 @@
 title: Jeisha Bistro
 categorias:
   - Gastronomía y Alimentos
-municipio: Quezaltenango
+municipio: Quetzaltenango
 direccion: 12 Avenida 3-70, Quetzaltenango
 ubicacion: https://maps.app.goo.gl/7nvVbGNzxQqT5iLM7?g_st=ipc
 descripcion: Jeisha Bistro es un restaurante tipo bistró ubicado en Zahra Plaza,

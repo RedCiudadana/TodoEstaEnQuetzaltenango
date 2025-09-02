@@ -2,7 +2,7 @@
 title: "Calzado El Becerro "
 categorias:
   - Moda
-municipio: Quezaltenango
+municipio: Quetzaltenango
 direccion: "5a calle 14-12 zona 1 Quetzaltenango "
 ubicacion: https://maps.app.goo.gl/NiacfgaiHf3AmoZ18
 descripcion: "Calzado Artesanal 100 por ciento piel "

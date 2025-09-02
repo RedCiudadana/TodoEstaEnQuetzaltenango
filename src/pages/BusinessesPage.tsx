@@ -120,7 +120,7 @@ const BusinessesPage: React.FC = () => {
               <span>Lista</span>
             </button>
             
-            <button
+            {/* <button
               onClick={() => toggleView('map')}
               className={`px-4 py-2 flex items-center gap-2 ${
                 view === 'map' 
@@ -132,7 +132,7 @@ const BusinessesPage: React.FC = () => {
             >
               <MapIcon size={18} />
               <span>Mapa</span>
-            </button>
+            </button> */}
           </div>
         </div>
         

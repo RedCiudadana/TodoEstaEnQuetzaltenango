@@ -38,7 +38,7 @@ const slides: Slide[] = [
     image: Slider,
     title: 'Todo Está',
     alternativetitle: 'En Quetzaltenango',
-    subtitle: 'descubre, conecta y apoya los negocios y emprendimientos locales de todos los municipios del departamento',
+    subtitle: 'descubre, conecta y apoya los negocios y emprendimientos locales',
     cta: {
       text: 'Explorar Negocios',
       link: '/negocios'

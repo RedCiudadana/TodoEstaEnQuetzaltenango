@@ -66,7 +66,7 @@ const CategoryList: React.FC = () => {
       {categories.map((category) => (
         <Link
           key={category.id}
-          to={`/negocios?categoria=${category.id}`}
+          to={`/negocios?categoria=${encodeURIComponent(category.title)}`}
           className="card card-hover bg-white p-6 flex flex-col items-center text-center group"
         >
           <div className="w-16 h-16 flex items-center justify-center rounded-full bg-accent-700 text-accent-500 mb-4 group-hover:bg-accent-700 transition-colors">
