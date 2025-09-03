@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
-import { MapPin, Clock, Phone, Mail, Globe, Facebook, Instagram, Twitter, CreditCard, DollarSign, ArrowLeft } from 'lucide-react';
+import { MapPin, Clock, Phone, Mail, Globe, Facebook, Instagram, Twitter, CreditCard, DollarSign, ArrowLeft, Share2, Copy, MessageCircle, X } from 'lucide-react';
 import { getBusinessesFromMarkdown } from '../data/loadBusinesses';
 import type { BusinessMarkdown } from '../types';
-import BusinessMap from '../components/map/BusinessMap';
 
 const BusinessDetailPage: React.FC = () => {
   const { id } = useParams<{ id: string }>();
@@ -314,7 +313,7 @@ const BusinessDetailPage: React.FC = () => {
             </div>
             
             {/* Business Hours */}
-            <div className="bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden">
+            <div className="bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden mb-6">
               <div className="p-6">
                 <h3 className="text-xl font-heading font-semibold mb-4 text-gray-800 flex items-center">
                   <Clock className="h-5 w-5 mr-2 text-accent-500" />
@@ -349,6 +348,93 @@ const BusinessDetailPage: React.FC = () => {
                       <span className="font-medium text-gray-500">Cerrado</span>
                     </div>
                   )}
+                </div>
+              </div>
+            </div>
+
+            {/* Share Business Profile */}
+            <div className="bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden">
+              <div className="p-6">
+                <h3 className="text-xl font-heading font-semibold mb-4 text-gray-800 flex items-center">
+                  <Share2 className="h-5 w-5 mr-2 text-accent-500" />
+                  Compartir Perfil
+                </h3>
+                
+                <p className="text-gray-600 mb-4 text-sm">
+                  Comparte este negocio en tus redes sociales
+                </p>
+                
+                <div className="space-y-3">
+                  {/* Copy URL Button */}
+                  <button
+                    onClick={() => {
+                      navigator.clipboard.writeText(window.location.href);
+                      // Simple feedback - could be enhanced with a toast notification
+                      const btn = document.getElementById('copy-url-btn');
+                      if (btn) {
+                        const originalText = btn.innerHTML;
+                        btn.innerHTML = '<svg class="h-4 w-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>¡Copiado!';
+                        setTimeout(() => {
+                          btn.innerHTML = originalText;
+                        }, 2000);
+                      }
+                    }}
+                    id="copy-url-btn"
+                    className="w-full flex items-center justify-center px-4 py-2 bg-gray-100 hover:bg-gray-200 text-gray-700 rounded-lg transition-colors"
+                  >
+                    <Copy className="h-4 w-4 mr-2" />
+                    Copiar enlace
+                  </button>
+                  
+                  {/* Social Media Share Buttons */}
+                  <div className="grid grid-cols-2 gap-3">
+                    {/* Facebook Share */}
+                    <a
+                      href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(window.location.href)}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center justify-center px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition-colors"
+                    >
+                      <Facebook className="h-4 w-4 mr-2" />
+                      Facebook
+                    </a>
+                    
+                    {/* WhatsApp Share */}
+                    <a
+                      href={`https://wa.me/?text=${encodeURIComponent(`¡Mira este negocio en Quetzaltenango! ${business.nombre} - ${window.location.href}`)}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center justify-center px-4 py-2 bg-green-600 hover:bg-green-700 text-white rounded-lg transition-colors"
+                    >
+                      <MessageCircle className="h-4 w-4 mr-2" />
+                      WhatsApp
+                    </a>
+                    
+                    {/* Twitter Share */}
+                    <a
+                      href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(`¡Mira este negocio en Quetzaltenango! ${business.nombre}`)}&url=${encodeURIComponent(window.location.href)}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center justify-center px-4 py-2 bg-sky-500 hover:bg-sky-600 text-white rounded-lg transition-colors"
+                    >
+                      <Twitter className="h-4 w-4 mr-2" />
+                      Twitter
+                    </a>
+                    
+                    {/* Instagram (opens Instagram app/website) */}
+                    <button
+                      onClick={() => {
+                        // For Instagram, we'll copy the URL and open Instagram
+                        navigator.clipboard.writeText(`¡Mira este negocio en Quetzaltenango! ${business.nombre} - ${window.location.href}`);
+                        window.open('https://www.instagram.com/', '_blank');
+                        alert('El enlace se ha copiado. Pégalo en tu historia o publicación de Instagram.');
+                      }}
+                      className="flex items-center justify-center px-4 py-2 bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white rounded-lg transition-colors"
+                    >
+                      <Instagram className="h-4 w-4 mr-2" />
+                      Instagram
+                    </button>
+                  </div>
                 </div>
               </div>
             </div>

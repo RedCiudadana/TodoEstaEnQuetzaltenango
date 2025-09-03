@@ -31,7 +31,7 @@ const HomePage: React.FC = () => {
           <div className="max-w-4xl mx-auto">
             <div className="text-center mb-8">
               <h2 className="text-2xl md:text-3xl font-heading font-bold text-gray-800 mb-2">
-                Encuentra lo que buscas
+                Encuenta lo que buscas en Esta Gran Metrópoli
               </h2>
               <p className="text-gray-600">
                 Descubre los negocios y servicios de Quetzaltenango
