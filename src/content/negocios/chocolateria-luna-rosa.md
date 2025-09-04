@@ -2,6 +2,7 @@
 title: Chocolateria Luna Rosa
 categorias:
   - "Chocolateria "
+foto_negocio: /uploads/chocolateria-y-fresas-con-crema-2.png
 municipio: Quetzaltenango
 direccion: "D12 10-44E interior zona 1 "
 ubicacion: https://maps.app.goo.gl/JWX5kx6ca33i95m3A
