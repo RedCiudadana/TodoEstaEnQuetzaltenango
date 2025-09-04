@@ -2,6 +2,7 @@
 title: "El Rinconcito español "
 categorias:
   - Gastronomía y Alimentos
+foto_negocio: /uploads/rinconcito-español.jpg
 municipio: Quetzaltenango
 direccion: "14 Avenida A, 3-26, zona 1, Quetzaltenango "
 ubicacion: https://maps.app.goo.gl/wjJwyfb6PUMnxacx5
