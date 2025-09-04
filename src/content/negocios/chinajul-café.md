@@ -2,6 +2,7 @@
 title: Chinajul Café
 categorias:
   - Gastronomía y Alimentos
+foto_negocio: /uploads/chinajul-café.jpg
 municipio: Quetzaltenango
 direccion: 14 Avenida A, Quetzaltenango 09001
 ubicacion: https://maps.app.goo.gl/PaNqAdU6v2rrncHo6
