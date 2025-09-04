@@ -2,6 +2,7 @@
 title: "MY expresiones de Amor "
 categorias:
   - Artesanías
+foto_negocio: /uploads/my-expresiones-de-amor.jpeg
 municipio: Quetzaltenango
 direccion: 14 calle D2-66 zona 5
 ubicacion: https://maps.app.goo.gl/P9XpQhGT3Rf8fTF56
