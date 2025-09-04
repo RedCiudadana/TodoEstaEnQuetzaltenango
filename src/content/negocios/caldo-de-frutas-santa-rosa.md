@@ -2,6 +2,7 @@
 title: Caldo de Frutas Santa Rosa
 categorias:
   - Gastronomía y Alimentos
+foto_negocio: /uploads/caldo-de-frutas-santa-rosa.jpg
 municipio: Salcajá
 direccion: 3ra av 4-200 zona 2 Salcajá, Quetzaltenango
 ubicacion: https://maps.app.goo.gl/Z6ryoHJCqHdJr6xQ6
