@@ -2,6 +2,7 @@
 title: "Mode A & M variedad en ropa "
 categorias:
   - Moda
+foto_negocio: /uploads/mode-a-m-variedad-de-ropa.jpg
 municipio: Quetzaltenango
 direccion: "Centro comercial de la zona 1 de xela primer nivel entrada frente al
   anexo del nuevo mercado "
