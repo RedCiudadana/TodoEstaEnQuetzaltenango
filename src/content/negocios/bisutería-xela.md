@@ -2,6 +2,7 @@
 title: Bisutería Xela
 categorias:
   - Artesanías
+foto_negocio: /uploads/bisutería-sela.jpeg
 municipio: Quetzaltenango
 direccion: Zona 7 Quetzaltenango
 ubicacion: https://maps.app.goo.gl/LSnQoregvWsqbSvQ6
