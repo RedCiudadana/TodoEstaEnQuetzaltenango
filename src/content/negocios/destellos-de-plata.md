@@ -2,6 +2,7 @@
 title: "Destellos De Plata "
 categorias:
   - Artesanías
+foto_negocio: /uploads/destellos-de-plata.jpg
 municipio: Salcajá
 direccion: "5ta. Avenida 7-03 zona 2, Villas de San Luis Salcajá, Quetzaltenango "
 ubicacion: https://maps.app.goo.gl/4bg6aUP7MNx3LN7Q7
