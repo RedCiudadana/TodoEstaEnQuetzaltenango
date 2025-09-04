@@ -2,6 +2,7 @@
 title: Sky Jewerly Angels
 categorias:
   - Moda
+foto_negocio: /uploads/sky-jewerly-angels.jpg
 municipio: Salcajá
 direccion: 3ra av 4-200 zona 2 Salcajá, Quetzaltenango
 ubicacion: https://maps.app.goo.gl/Z6ryoHJCqHdJr6xQ6
