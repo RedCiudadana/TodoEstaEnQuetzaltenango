@@ -2,6 +2,7 @@
 title: "Restaurante Brickell "
 categorias:
   - Gastronomía y Alimentos
+foto_negocio: /uploads/calzado-brickell.jpg
 municipio: Quetzaltenango
 direccion: "14 avenida A 4-41 zona 1 de Quetzaltenango "
 ubicacion: https://maps.app.goo.gl/GeEuS4AcEQPhdiiq7
