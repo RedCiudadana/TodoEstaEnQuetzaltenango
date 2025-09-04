@@ -44,7 +44,7 @@ collections:
         display_fields: ["title"]
         multiple: true
         required: false
-      - { label: "Fotografía del Negocio", name: "foto_negocio", widget: "image", required: false }
+      - { label: "Fotografía del Negocio", name: "foto_negocio", widget: "string", hint: "Puede usar una URL (https://...) o subir una imagen (/uploads/nombre.jpg)", required: false }
       - { label: "Municipio", name: "municipio", widget: "string" }
       - { label: "Dirección", name: "direccion", widget: "string" }
       - { label: "Ubicación en Google Maps", name: "ubicacion", widget: "string" }

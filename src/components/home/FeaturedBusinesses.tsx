@@ -2,12 +2,12 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { MapPin, ArrowRight } from 'lucide-react';
 import { BusinessMarkdown } from '../../types';
+import { getBusinessMainImage } from '../../lib/imageUtils';
 
 interface FeaturedBusinessesProps {
   businesses: BusinessMarkdown[];
 }
 
-const placeholderImg = 'https://placehold.co/400x250?text=Negocio';
 
 const FeaturedBusinesses: React.FC<FeaturedBusinessesProps> = ({ businesses }) => {
   if (!businesses.length) {
@@ -17,9 +17,9 @@ const FeaturedBusinesses: React.FC<FeaturedBusinessesProps> = ({ businesses }) =
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
       {businesses.map((business, idx) => (
         <div key={idx} className="card card-hover h-full flex flex-col">
-          <div className="relative h-48 rounded-t-lg overflow-hidden">
+          <div className="relative h-48 rounded-t-lg overflow-hidden aspect-[1.6/1]">
             <img
-              src={business.fotos && business.fotos.length > 0 ? business.fotos[0] : placeholderImg}
+              src={getBusinessMainImage(business.fotos, 400, 250)}
               alt={business.nombre}
               className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
             />

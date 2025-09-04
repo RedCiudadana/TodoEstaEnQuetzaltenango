@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
-import { MapPin, Clock, Phone, Mail, Globe, Facebook, Instagram, Twitter, CreditCard, DollarSign, ArrowLeft, Share2, Copy, MessageCircle, X } from 'lucide-react';
+import { MapPin, Clock, Phone, Mail, Globe, Facebook, Instagram, Twitter, CreditCard, DollarSign, ArrowLeft, Share2, Copy, MessageCircle } from 'lucide-react';
 import { getBusinessesFromMarkdown } from '../data/loadBusinesses';
 import type { BusinessMarkdown } from '../types';
+import { resolveImageSrc } from '../lib/imageUtils';
 
 const BusinessDetailPage: React.FC = () => {
   const { id } = useParams<{ id: string }>();
@@ -112,7 +113,7 @@ const BusinessDetailPage: React.FC = () => {
       <div className="relative h-80 bg-secondary-800">
         {business.fotos && business.fotos.length > 0 ? (
           <img 
-            src={business.fotos[activePhoto]} 
+            src={resolveImageSrc(business.fotos[activePhoto])} 
             alt={business.nombre} 
             className="w-full h-full object-cover"
           />
@@ -161,7 +162,7 @@ const BusinessDetailPage: React.FC = () => {
                   }`}
                 >
                   <img 
-                    src={photo} 
+                    src={resolveImageSrc(photo)} 
                     alt={`${business.nombre} - Foto ${index + 1}`}
                     className="h-full w-full object-cover"
                   />

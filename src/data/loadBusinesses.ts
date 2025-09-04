@@ -50,7 +50,7 @@ export async function getBusinessesFromMarkdown(): Promise<BusinessMarkdown[]> {
         horario_domingo: data.horario_domingo,
         facebook: data.facebook,
         instagram: data.instagram,
-        fotos: Array.isArray(data.fotos) ? data.fotos : (data.fotos ? [data.fotos] : []),
+        fotos: Array.isArray(data.fotos) ? data.fotos : (data.fotos ? [data.fotos] : (data.foto_negocio ? [data.foto_negocio] : [])),
       };
       businesses.push(negocio);
     }

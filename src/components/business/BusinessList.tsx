@@ -2,12 +2,12 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { MapPin, ArrowRight } from 'lucide-react';
 import { BusinessMarkdown } from '../../types';
+import { getBusinessMainImage } from '../../lib/imageUtils';
 
 interface BusinessListProps {
   businesses: BusinessMarkdown[];
 }
 
-const placeholderImg = 'https://placehold.co/400x250?text=Negocio';
 
 const BusinessList: React.FC<BusinessListProps> = ({ businesses }) => {
   if (!businesses.length) {
@@ -17,7 +17,7 @@ const BusinessList: React.FC<BusinessListProps> = ({ businesses }) => {
     <div className="space-y-4">
       {businesses.map((business, idx) => (
         <div key={idx} className="card card-hover flex flex-col sm:flex-row">
-          <div className="relative h-40 sm:h-auto sm:w-1/3 rounded-t-lg sm:rounded-t-none sm:rounded-l-lg overflow-hidden">
+          <div className="relative h-40 sm:h-auto sm:w-1/3 rounded-t-lg sm:rounded-t-none sm:rounded-l-lg overflow-hidden sm:aspect-[1.6/1]">
             <div className="absolute top-2 left-2 z-10 flex flex-wrap gap-2">
               {business.categorias && business.categorias.length > 0 && business.categorias.map((cat, i) => (
                 <span key={i} className="inline-block bg-gray-100 text-gray-700 px-2 py-1 rounded-full text-xs font-medium shadow">
@@ -26,7 +26,7 @@ const BusinessList: React.FC<BusinessListProps> = ({ businesses }) => {
               ))}
             </div>
             <img
-              src={business.fotos && business.fotos.length > 0 ? business.fotos[0] : placeholderImg}
+              src={getBusinessMainImage(business.fotos, 400, 250)}
               alt={business.nombre}
               className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
             />
