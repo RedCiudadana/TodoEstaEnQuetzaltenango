@@ -2,6 +2,7 @@
 title: Ebisa Soluciones Ecológicas Vanushka Comestics
 categorias:
   - "Agro industria "
+foto_negocio: /uploads/ebisa-soluciones-ecológicas.jpeg
 municipio: Quetzaltenango
 direccion: "Residencial El Trigal casa número 56 Olintepeque, Quetzaltenango "
 ubicacion: https://maps.app.goo.gl/pmndCf6rj5f7zC76A
