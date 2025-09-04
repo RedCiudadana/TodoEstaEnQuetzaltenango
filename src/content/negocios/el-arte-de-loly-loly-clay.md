@@ -2,6 +2,7 @@
 title: El arte de Loly (Loly Clay)
 categorias:
   - Artesanías
+foto_negocio: /uploads/el-arte-de-loly-loly-clay-.jpg
 municipio: Quetzaltenango
 direccion: 2da calle 25-75 zona 7 colonia San Antonio, Quetzaltenango
 ubicacion: https://maps.app.goo.gl/JRYAHCTCdvnN6ZkL9
