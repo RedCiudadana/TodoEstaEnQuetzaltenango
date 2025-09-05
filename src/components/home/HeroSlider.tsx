@@ -77,7 +77,7 @@ const HeroSlider: React.FC = () => {
           <div className="max-w-3xl">
             <h1 className="text-4xl md:text-6xl font-heading font-bold text-gray-800 mb-6 animate-fade-in">
               {slides[currentSlide].title}
-              <span className="ml-2" style={{ color: '#e76624' }}>{slides[currentSlide].alternativetitle}</span>
+              <span className="ml-2" style={{ color: 'rgb(229,35,32)' }}>{slides[currentSlide].alternativetitle}</span>
             </h1>
             <p className="text-xl md:text-2xl  mb-8 animate-fade-in-delay">
               {slides[currentSlide].subtitle}
