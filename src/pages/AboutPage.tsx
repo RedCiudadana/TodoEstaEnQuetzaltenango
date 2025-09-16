@@ -105,7 +105,7 @@ const AboutPage: React.FC = () => {
         </div>
         
         {/* Team */}
-        <div className="mb-12">
+        {/* <div className="mb-12">
           <div className="text-center mb-8">
             <h2 className="text-3xl font-heading font-bold text-gray-800 mb-2">
               Nuestro Equipo
@@ -147,7 +147,7 @@ const AboutPage: React.FC = () => {
               </div>
             </div>
           </div>
-        </div>
+        </div> */}
         
         {/* Contact & Get Involved */}
         <div className="bg-gray-50 rounded-lg p-8 md:p-12">
@@ -183,7 +183,7 @@ const AboutPage: React.FC = () => {
                 Si tienes preguntas, sugerencias o propuestas de colaboración, 
                 no dudes en comunicarte con nosotros.
               </p>
-              <a href="mailto:contacto@todoestaquetzaltenango.com" className="btn btn-secondary">
+              <a href="mailto:info@redciudadana.org.gt" className="btn btn-secondary">
                 Enviar Mensaje
               </a>
             </div>

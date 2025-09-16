@@ -3,6 +3,7 @@ import { ChevronLeft, ChevronRight } from 'lucide-react';
 import Slider from '../../assets/images/slider/TEQ-04.png';
 import TopSlider1 from '../../assets/images/slider/TEQ-05.png';
 import TopSlider2 from '../../assets/images/slider/TEQ-03.png';
+import SliderTop from '../../assets/images/slider/sliderimg.png';
 
 interface Slide {
   image: string;
@@ -106,18 +107,18 @@ const HeroSlider: React.FC = () => {
       <div className="hidden md:flex w-1/2 items-center justify-center relative h-full">
         {/* Imagen base: altura completa */}
         <img
-          src={TopSlider1}
+          src={SliderTop}
           alt="TopSlider1"
           className="absolute inset-0 w-full h-full object-cover rounded-xl"
           style={{ zIndex: 1 }}
         />
         {/* Imagen superpuesta */}
-        <img
+        {/* <img
           src={TopSlider2}
           alt="TopSlider2"
           className="absolute top-[2.5%] left-1/2 transform -translate-x-1/2 w-full h-[95%] rounded-xl object-cover"
           style={{ zIndex: 2 }}
-        />
+        /> */}
       </div>
 
       {/* Navigation Buttons */}
